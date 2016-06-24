@@ -1,20 +1,17 @@
 <?php
-    include 'utility.php';
-
-    name = $_POST['name'];
-    email = $_POST['email'];
-    question = $_POST['question'];
-
-
-    $sql = "INSERT INTO Questions (name, email, question, answer)
-    VALUES (name, email, question, NULL)";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
     }
-
-    $conn->close();
-
 ?>

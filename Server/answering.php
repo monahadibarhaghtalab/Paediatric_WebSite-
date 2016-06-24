@@ -1,19 +1,16 @@
 <?php
+
     include 'utility.php';
 
-    $sql = "SELECT name, question FROM Questions";
-    $result = $conn->query($sql);
+    $answer = $_POST['answer'];
+    $question = $_POST['question'];
+    $sql = "UPDATE Questions SET answer=$answer WHERE question=$question";
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $name = $row["name"];
-            $question = $row["question"];
-            echo "<label".$name.":> </label> </br>";
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully";
     } else {
-        echo "0 results";
+        echo "Error updating record: " . $conn->error;
     }
-    $conn->close();
 
+    $conn->close();
 ?>
