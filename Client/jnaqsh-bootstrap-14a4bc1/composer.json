@@ -1,0 +1,9 @@
+{
+    "name": "jnaqsh/bootstrap"
+  , "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
+  , "keywords": ["bootstrap", "css", "rbootstrap"]
+  , "homepage": "http://jnaqsh.github.com/bootstrap/"
+  , "author": "Naqsh Inc."
+  , "license": "Apache-2.0"
+
+}

@@ -1,0 +1,112 @@
+.fa-font-set {
+    font-family: B Koodak;
+}
+
+.header-style {
+    background-color: #003f59;
+    position: absolute !important;
+    min-height: 50px;
+    padding-top: 10px;
+}
+
+.navbar .nav > li > a {
+    background-color: transparent;
+    text-shadow: none !important;
+    color: #b5dcf4;
+}
+
+.navbar .nav > li > a:hover, .navbar .nav > li > a:focus {
+    color: white;
+}
+
+.nav {
+    background-color: transparent !important;
+}
+
+.brand-navbar {
+    margin-right: 20px !important;
+    text-shadow: none !important;
+    color: white!important;
+}
+
+.collapse-navbar {
+    margin-left: 20px !important;
+}
+
+.bg-image {
+    position: relative;
+}
+
+.bg-image{
+    display: block;
+    width: 100%;
+    max-width: 1200px; /* corresponds to max height of 450px */
+    margin: 0 auto;
+}
+
+.nav, .main {
+    background-color: #f6f6f6;
+    text-align: center;
+}
+
+.bg-img {
+    margin-top: 60px !important;
+    padding-top: -1px;
+}
+
+/*.wrapper {
+background: url('content/img/sample-01.jpg') no-repeat   center center fixed;
+background-color: #f1f1f1;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+*/
+
+.body-style {
+    background-color: #f1f1f1;
+    background-image: url("content/img/home_bg_repeat.jpg");
+    background-repeat: repeat-y;
+    height: 100%;
+}
+
+.home-body {
+    background-image: url("content/img/home_bg_repeat.jpg");
+}
+
+.question-body {
+    background-image: url("content/img/question_bg-repeat.jpg");
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 200px;
+    background-color: white;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 0px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
