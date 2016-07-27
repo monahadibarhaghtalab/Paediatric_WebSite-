@@ -66,18 +66,41 @@ background-size: cover;
 
 .body-style {
     background-color: #f1f1f1;
-    background-image: url("content/img/home_bg_repeat.jpg");
-    background-repeat: repeat-y;
+    /*background-image: url("content/img/home_bg_repeat.jpg");
+    background-repeat: repeat-y;*/
     height: 100%;
 }
 
 .home-body {
-    background-image: url("content/img/home_bg_repeat.jpg");
+    /*background-image: url("content/img/home_bg_repeat.jpg");*/
 }
 
 .question-body {
-    background-image: url("content/img/question_bg-repeat.jpg");
+    /*background-image: url("content/img/question_bg-repeat.jpg");*/
 }
+
+.bg-img-repeat {
+    margin-top: 0px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+.gallery-img {
+    max-width: 400px !important;
+}
+
+.carousel-caption {
+    right: 0px !important;
+    left: 0px !important;
+    padding: 5px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
