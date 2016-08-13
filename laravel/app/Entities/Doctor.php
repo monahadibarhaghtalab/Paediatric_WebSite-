@@ -19,4 +19,10 @@ class Doctor extends Model
   	{
   		return $this->hasMany('App\Model\Article');
   	}
+
+
+    public function image()
+    {
+      return $this->hasMany('App\Model\Image');
+    }
 }

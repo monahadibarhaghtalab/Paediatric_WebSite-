@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/gallery/all', 'ImageController@all');
+Route::get('/Question/all', 'QuestionController@all');
+Route::get('/Article/all', 'ArticleController@all');
+
+
+
+Route::get('/post/create', ['as' => 'question.submit', 'uses' => 'QuestionController@create']);
