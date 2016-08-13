@@ -16,4 +16,41 @@ class ArticleController extends Controller
     	return view("article\all")->with("aricles", allArticle);
     }
 
+
+     public function creat()
+    {
+        return view('article.create');// not sure if . is correct or \ 
+
+    }
+
+    public function store(Request $request)
+    {
+        $article = new Article();
+        $article->title = $request->post('title');
+        $article->body = $request->post('body');
+        $article->cat = $request->post('cat');
+        
+        $article->save();
+
+        return view('article.create');
+    }
+
+
+    public function edit($id){
+    	$article = Article::find($id);
+
+    	return view('atricle.edit')->with('article', $article);
+    }
+
+    public function update(Request $request){
+    	$article = Aricle::find($request ->post('id'));
+    	$article->title = $request->post('title');
+    	$article->body = $request->post('body');
+
+    	$article->save();
+
+    	return Redirect::to(admin/article);
+
+
+    }
 }

@@ -15,11 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//image of gallary
 Route::get('/gallery/all', 'ImageController@all');
-Route::get('/Question/all', 'QuestionController@all');
-Route::get('/Article/all', 'ArticleController@all');
+
+
+//question
+Route::get('/question/all', 'QuestionController@all');
+Route::get('/question/create', ['as' => 'question.create', 'uses' => 'QuestionController@create']);
+Route::post('/question/create', ['as' => 'question.store', 'uses' => 'QuestionController@store']);
+Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
 
 
 
-Route::get('/post/create', ['as' => 'question.submit', 'uses' => 'QuestionController@create']);
+//article
+Route::get('/article/all', 'ArticleController@all');
+Route::get('/admin/article/create', ['as' => 'article.create', 'uses' => 'ArticleController@create']);
+Route::post('/admin/article/create', ['as' => 'article.store', 'uses' => 'ArticleController@store']);
+Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
+
+
+
+
+
+
+
+
