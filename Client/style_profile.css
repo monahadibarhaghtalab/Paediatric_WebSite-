@@ -206,6 +206,10 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
     border-bottom-left-radius: 0px !important;
 }
 
+a.list-group-item.text-center {
+    height: 127px;
+}
+
 .list-group-item-img {
     width: 30px;
     margin-top: 10px;
@@ -238,7 +242,7 @@ input.upload {
     color: white !important;
     -webkit-transition-duration: .3s;  
     min-width: 20%;
-    font-size: 1.1vw !important;
+    font-size: 14px !important;
 }
 
 .red-btn:hover {
@@ -290,7 +294,7 @@ input.upload {
 }
 
 .control-label {
-    font-size: 1.2vw !important;
+    font-size: 14px !important;
 }
 
 .feedback-content {
@@ -324,12 +328,13 @@ td, th {
 .tab-img {
     background-color: #757575;
     -webkit-transition-duration: .3s;  
-    max-width: 40px !important;
+    /*  max-width: 40px !important;*/
+    width: 40px;
     margin: -4px !important;
 }
 
 /*.tab-img:hover{
-    background-color: #cf2229;
+background-color: #cf2229;
 }*/
 
 .video-caption {
@@ -393,12 +398,6 @@ td, th {
     left: 29%;
 }
 
-.ic-close {
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-}
-
 .container-close {
     float: left !important;
     padding: 0 5px !important;
@@ -431,4 +430,93 @@ td, th {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #cf2229;  
+}
+
+/* upload style*/
+.upload-drop-zone {
+    height: 200px;
+    border-width: 2px;
+    margin-bottom: 20px;
+}
+
+.upload-drop-zone {
+    margin: 20px 0px 20px 0px;
+    color: #ccc;
+    border-style: dashed;
+    border-color: #ccc;
+    /*line-height: 200px;*/
+    padding-top: 50px;
+    text-align: center;
+    direction: rtl;
+}
+
+.upload-drop-zone.drop {
+    color: #222;
+    border-color: #222;
+}
+
+.upload-container {
+    /*height: 100%;*/
+    /*margin-top: 200px;*/
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload-drop-zone-btn {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.upload-drop-zone-btn input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #ccc;
+    font: #ccc;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.pb-color {
+    background-color: #003f59 !important;
+}
+
+/* gallery pic in profile */
+.pic-container {  
+    position: relative !important;
+    display: inline-block !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border: 0px !important;
+    border-radius: 0px !important;
+    margin: 5px 5px 5px 5px !important;
+    background: #fff !important;
+    max-width: 150px;
+}
+
+.pic-view {
+    position: relative;
+    display: inline-block !important;
+}
+
+.pic-caption {
+    padding-top: 10px;
+    color: #212121;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.ic-close {
+    cursor: pointer;
+    float: left;
+    max-width: 10px !important;
+    margin: 2px !important;
 }
