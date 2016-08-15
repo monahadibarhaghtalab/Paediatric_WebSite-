@@ -40,3 +40,7 @@ Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => '
 
 
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
