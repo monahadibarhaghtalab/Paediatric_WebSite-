@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 //image of gallary
 Route::get('/gallery/all', 'ImageController@all');
 
@@ -42,5 +45,8 @@ Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => '
 
 
 Route::auth();
+//main admin
+Route::get('/admin', 'User\UserController@index');
 
-Route::get('/home', 'HomeController@index');
+
+//Route::get('/home', 'HomeController@index');

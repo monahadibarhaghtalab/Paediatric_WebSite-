@@ -14,19 +14,16 @@ class QuestionController extends Controller
 
 	private function getAnsweredQuestion(){
 
-		for ($i=0; $i < Question::; $i++) { 
-        	if (condition) {
-        		# code...
-        		$allAnswered = Image::all();
-        	}
-        	# code...
-        }
-    	
 
-		return $allAnswered
+        $allAnswered = \App\Entities\Question::where('is_answered', '1');
+
+
+
+
+		return $allAnswered;
 	}
     //To get all answered questions
-        public functtion allAnswered(){
+        public function allAnswered(){
 
     	
     	return view("question\allAnsweredQuestion")->with("answeredQs", getAnsweredQuestion());
@@ -39,6 +36,7 @@ class QuestionController extends Controller
 
     }
 
+    //store new question
         public function store(Request $request)
     {
         $question = new Question();
@@ -51,6 +49,7 @@ class QuestionController extends Controller
     }
 
 
+    //edit answer
      public function editAnswer($id){
     	$question = Question::find($id);
 
@@ -60,13 +59,13 @@ class QuestionController extends Controller
 
 
      public function updateAnswer(Request $request){
-    	$question = Question::find($requset->post('id'));
+         $question = Question::find($request->post('id'));
 
     	$question->answer = $request->post('answer');
-    	$question->is_confirmed = 1;
+    	$question->is_answered = 1;
     	$question->save();
 
-    	return Redirect::to(admin/quesiotn);
+    	return Redirect::to(admin/question);
 
     }
 

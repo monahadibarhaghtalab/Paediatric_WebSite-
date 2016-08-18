@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class ArticleController extends Controller
 {
     //To show all article
-        public functtion all(){
+        public function all(){
 
     	$allArticle = Article::all();
     	return view("article\all")->with("aricles", allArticle);
@@ -28,6 +28,7 @@ class ArticleController extends Controller
         $article = new Article();
         $article->title = $request->post('title');
         $article->body = $request->post('body');
+        $article-> image_article_addr= input::file('image');
         $article->cat = $request->post('cat');
         
         $article->save();
@@ -49,7 +50,7 @@ class ArticleController extends Controller
 
     	$article->save();
 
-    	return Redirect::to(admin/article);
+    	return Redirect::to('admin/article');
 
 
     }

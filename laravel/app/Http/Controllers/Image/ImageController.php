@@ -11,7 +11,7 @@ class ImageController extends Controller
 {
     //To show all image from all category
 
-    public functtion all(){
+    public function all(){
 
     	$allImage = Image::all();
     	return view("gallery\all")->with("images", allImage);
