@@ -304,7 +304,6 @@ input.upload {
 
 .comment-container {
     position: relative;
-    padding-bottom: 40px;
 }
 
 .red-line {
@@ -519,4 +518,11 @@ background-color: #cf2229;
     float: left;
     max-width: 10px !important;
     margin: 2px !important;
+}
+
+.qa_manage {
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px;
+    float: right;
 }
