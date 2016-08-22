@@ -9,18 +9,29 @@
         <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/favicon.png">
+        <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/favicon.png">-->
 
         <link href="style.css" rel="stylesheet">
 
         <link href='font.css' rel='stylesheet' type='text/css'>
 
-        <script type="text/javascript">
-
+        <script>
+            $(document).ready(function() {
+                $(window).resize(function(e) {
+                    var qa_height = $(".question-container").height();
+                    var header_height = $(".navbar-fixed-top").height();
+                    var footer_height = $("footer").height();
+                    var body_height = $("body").height();
+                    alert("hello");
+                    /*if(qa_height > (body_height - (footer_height + header_height))) {
+                        $("img").find(".bg-img-repeat").after("<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">");
+                    }*/
+                });
+            });
         </script>
     </head>
 
@@ -33,6 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
                 <a class="brand brand-navbar fa-font-set" href="#">دکتر نظام برحق طلب</a>
                 <div class="nav-collapse collapse" id="myNavbar">
                     <ul class="nav">
@@ -74,55 +86,124 @@
                             <p class="qa-description-style">شرح سوال</p>
                             <p class="qa-caption-style">پاسخ</p>
                             <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
                         </div>
                         <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                        <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+                        <!--<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">-->
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="footer-container">
-            <!--footer-->
-            <div class="row footer">
-                <div class="fa-font-set">سلام</div>
-                <div class="row" style="z-index:100;">
-                    <div class="profile-header-container">   
-                        <div class="col-xs-3 col-rtl">
-                            <div class="profile-header-img">
-                                <img class="img-circle" src="content/img/profile.jpg" />
-                                <!-- badge -->
-                                <div class="rank-label-container">
-                                    <span class="label label-default rank-label fa-font-set">دکتر نظام برحق طلب - متخصص اطفال</span>
+            <div class="container-fluid">
+                <!--footer-->
+                <div class="row footer">
+                    <div class="row" style="z-index:100;">
+                        <div class="profile-header-container">   
+                            <div class="col-xs-3 col-rtl">
+                                <div class="profile-header-img">
+                                    <img class="img-circle" src="content/img/profile.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container">
+                                        <span class="label label-default rank-label fa-font-set">دکتر نظام برحق طلب - متخصص اطفال</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-6 col-rtl">
-                            <div class="fa-font-set footer-detail">آدرس: ایران - شیراز - خیابان فلان - کوچه ی فلان - پلاک فلان - واحد فلان <br> شماره تماس: 023-13246578</div>
-                        </div>
-                        <div class="col-xs-3 col-rtl">
-                            <button type="submit" class="btn btn-default fa-font-set btn-enter">ورود</button>
-                        </div>
-                    </div> 
+                            <div class="col-xs-6 col-rtl">
+                                <div class="fa-font-set footer-detail">آدرس: ایران - شیراز - خیابان فلان - کوچه ی فلان - پلاک فلان - واحد فلان <br> شماره تماس: 023-13246578</div>
+                            </div>
+                            <div class="col-xs-3 col-rtl">
+                                <button type="submit" class="btn btn-default fa-font-set red-btn" data-toggle="modal" data-target="#login">ورود</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
-
         </div>
 
 
+        <!-- log in & sign up-->
+        <div class="modal fade" id="login" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- login content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-xs-6 col-rtl">
+                                <h4 id="log-in-caption" class="modal-title fa-font-set modal-caption">ورود</h4>
+                            </div>
+                            <div class="col-xs-6 col-rtl">
+                                <button type="button" class="close modal-close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-2"></div>
+                                <div class="col-xs-8">
+                                    <div id="log-in-content">
+                                        <div class="row" class="modal-row">
+                                            <div class="form-group">
+                                                <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="نام کاربری(انگلیسی)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="data[password]" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
+                                            </div>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <div class="checkbox" style="float: right;">
+                                                <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
+                                            </div>
+                                            <button type="submit" class="btn btn-enter fa-font-set">ورود</button>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <a class="fa-font-set col-rtl modal-text-link" href="#">اطلاعات کاربری خود را فراموش کرده‌ام</a>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <a id="sign-up" class="fa-font-set col-rtl modal-text-link" href="#">تاکنون حساب کاربری نساخته‌ام</a>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
+                                        <div class="form-group">
+                                            <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="کد امنیتی">
+                                        </div>
+                                        <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
+                                    </div>
 
+                                </div>
+                                <div class="col-xs-2"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- javascript
 ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

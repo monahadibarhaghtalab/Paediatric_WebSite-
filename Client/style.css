@@ -13,6 +13,13 @@
     padding-top: 10px;
 }
 
+.around-shadow {
+    -webkit-box-shadow: 0 2px 3px #9e9e9e;
+    -moz-box-shadow: 0 2px 3px #9e9e9e;
+    box-shadow: 0 2px 3px #9e9e9e;
+    -webkit-transition-duration: .3s;    
+}
+
 .navbar .nav > li > a {
     background-color: transparent;
     text-shadow: none !important;
@@ -74,6 +81,7 @@ background-size: cover;
     /*background-image: url("content/img/home_bg_repeat.jpg");
     background-repeat: repeat-y;*/
     height: 100%;
+    margin:0;
     overflow-x: hidden;
 }
 
@@ -95,8 +103,49 @@ background-size: cover;
     margin: auto;
 }
 
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+
 .gallery-img {
     max-width: 400px !important;
+}
+
+.carousel-control.right {
+    right: 0px !important;
+}
+
+.carousel-control.left {
+    left: 0px !important;
 }
 
 .carousel-caption {
@@ -104,6 +153,15 @@ background-size: cover;
     left: 0px !important;
     padding: 5px !important;
     background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.links-container {
+    position: relative;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .footer-container {
@@ -166,9 +224,18 @@ background-size: cover;
     right: 36%;
 }
 
-.btn-enter {
-    position: absolute;
-    right: 90%;
+.red-btn {
+    background-color: #cf2229 !important;
+    color: white !important;
+    -webkit-transition-duration: .3s;  
+    min-width: 20%;
+    font-size: 14px !important;
+}
+
+.red-btn:hover {
+    background-color: white !important;
+    border-color: #cf2229 !important;
+    color: #cf2229 !important;
 }
 
 .question-container {
@@ -195,22 +262,77 @@ background-size: cover;
     width: 50%;
 }
 
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-/*body > .container {
-padding: 0px 15px 0;
-}
-.container .text-muted {
-margin: 20px 0;
+/* login style */
+.modal-header {
+    background-color: #cf2229 !important;
+    border-bottom: 2px solid #003f59 !important;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
 }
 
-.footer > .container {
-padding-right: 15px;
-padding-left: 15px;
+.modal-body {
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
-code {
-font-size: 80%;
-}*/
+.input-font, .modal-caption {
+    direction: rtl;
+}
+
+.modal-caption {
+    color: white;
+}
+
+.modal-input {
+    width: 50%;
+}
+
+.modal-close {
+    float: left !important;
+    color: white;
+}
+
+.modal-row {
+    width:100%; 
+    margin:auto;
+}
+
+.modal-text-link {
+    margin-bottom: 5px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    direction: rtl;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    direction: rtl;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
+    direction: rtl;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    direction: rtl;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #cccccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cf2229;  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cf2229;  
+}
