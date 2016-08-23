@@ -1,20 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mona
- * Date: 8/18/2016 AD
- * Time: 12:50
- */
-
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreatePatientTable extends Migration
 {
-
-
-
     /**
      * Run the migrations.
      *
@@ -31,7 +21,6 @@ class CreatePatientTable extends Migration
         });
     }
 
-
     /**
      * Reverse the migrations.
      *
@@ -40,6 +29,5 @@ class CreatePatientTable extends Migration
     public function down()
     {
         Schema::drop('patient');
-
     }
 }

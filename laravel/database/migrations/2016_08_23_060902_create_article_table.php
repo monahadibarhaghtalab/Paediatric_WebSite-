@@ -1,20 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mona
- * Date: 8/18/2016 AD
- * Time: 11:27
- */
-
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateArticleTable extends Migration
 {
-
-
-
     /**
      * Run the migrations.
      *
@@ -22,7 +12,6 @@ class CreateArticleTable extends Migration
      */
     public function up()
     {
-
         Schema::create('article', function (Blueprint $table) {
             $table->increments('article_id');
             $table->string("image_article_addr");
@@ -32,7 +21,6 @@ class CreateArticleTable extends Migration
         });
     }
 
-
     /**
      * Reverse the migrations.
      *
@@ -41,6 +29,5 @@ class CreateArticleTable extends Migration
     public function down()
     {
         Schema::drop('article');
-
     }
 }

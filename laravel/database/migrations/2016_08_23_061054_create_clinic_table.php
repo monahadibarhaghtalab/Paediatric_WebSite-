@@ -1,19 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mona
- * Date: 8/18/2016 AD
- * Time: 11:23
- */
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDoctorTable extends Migration
+class CreateClinicTable extends Migration
 {
-
-
-
     /**
      * Run the migrations.
      *
@@ -21,13 +12,14 @@ class CreateDoctorTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctor', function (Blueprint $table) {
-            $table->integer('code_id');
-            $table->primary('code_id');
+        Schema::create('clinic', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string("name");
+            $table->string("address");
+            $table->integer("tel");
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -36,7 +28,6 @@ class CreateDoctorTable extends Migration
      */
     public function down()
     {
-        Schema::drop('doctor');
-
+        Schema::drop('clinic');
     }
 }
