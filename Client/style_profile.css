@@ -295,6 +295,7 @@ input.upload {
 
 .control-label {
     font-size: 14px !important;
+    padding-top: 0px !important;
 }
 
 .feedback-content {
@@ -518,6 +519,7 @@ background-color: #cf2229;
     float: left;
     max-width: 10px !important;
     margin: 2px !important;
+    margin-left: 17px !important;
 }
 
 .qa_manage {

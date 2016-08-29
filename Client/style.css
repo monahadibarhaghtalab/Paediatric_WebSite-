@@ -160,8 +160,9 @@ body,
     height: 100%;
     background-color: white;
     overflow-y: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 15px;
 }
 
 .footer-container {

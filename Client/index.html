@@ -26,8 +26,9 @@
         <script>
             $('.carousel').carousel();
             $(document).ready(function(){
+                $(".links-container").height($(".carousel-inner").height());
                 $(window).resize(function(){
-                    $(".links-container").height($("#myCarousel"));
+                    $(".links-container").height($(".carousel-inner").height()-20);
                 });
             });
         </script>
@@ -67,7 +68,15 @@
             <div class="row">
                 <div class="col-xs-3 col-rtl">
                     <div class="links-container around-shadow fa-font-set">
-                        سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام 
+                        <span style="font-size:1.3vw;">لینک های مرتبط</span>
+                        <table class="fa-font-set">
+                            <li><a href="#">لینک اول</a></li>
+                            <li><a href="#">لینک دوم</a></li>
+                            <li><a href="#">لینک سوم</a></li>
+                            <li><a href="#">لینک چهارم</a></li>
+                            <li><a href="#">لینک پنجم</a></li>
+                            <li><a href="#">لینک ششم</a></li>
+                        </table>
                     </div>
                 </div>
                 <div class="col-xs-6 col-rtl">
@@ -75,30 +84,14 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
 
-                            <div class="item active">
-                                <img class="gallery-img" src="content/gallery/Chrysanthemum.jpg" alt="">
+                           <div class="item">
+                                <img class="gallery-img" src="content/gallery/%D8%A8%DB%8C%D9%84%DB%8C-%D8%B1%D9%88%D8%A8%DB%8C%D9%86-%D9%85%D8%AA%D8%B1-www.BMEcenter.ir-1.jpg" alt="">
                                 <div class="carousel-caption">
-                                    <h3 class="fa-font-set">عنوان اول</h3>
-                                    <p class="fa-font-set">توضیحات عنوان اول</p>
+                                    <h3 class="fa-font-set">عنوان پنجم</h3>
+                                    <p class="fa-font-set">توضیحات عنوان پنجم</p>
                                 </div>
                             </div>
-
-                            <div class="item">
-                                <img class="gallery-img" src="content/gallery/Desert.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3 class="fa-font-set">عنوان دوم</h3>
-                                    <p class="fa-font-set">توضیحات عنوان دوم</p>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <img class="gallery-img" src="content/gallery/Hydrangeas.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3 class="fa-font-set">عنوان سوم</h3>
-                                    <p class="fa-font-set">توضیحات عنوان سوم</p>
-                                </div>
-                            </div>
-
+                            
                             <div class="item">
                                 <img class="gallery-img" src="content/gallery/Tulips.jpg" alt="">
                                 <div class="carousel-caption">
@@ -106,12 +99,28 @@
                                     <p class="fa-font-set">توضیحات عنوان چهارم</p>
                                 </div>
                             </div>
-
+                            
                             <div class="item">
-                                <img class="gallery-img" src="content/gallery/%D8%A8%DB%8C%D9%84%DB%8C-%D8%B1%D9%88%D8%A8%DB%8C%D9%86-%D9%85%D8%AA%D8%B1-www.BMEcenter.ir-1.jpg" alt="">
+                                <img class="gallery-img" src="content/gallery/Hydrangeas.jpg" alt="">
                                 <div class="carousel-caption">
-                                    <h3 class="fa-font-set">عنوان پنجم</h3>
-                                    <p class="fa-font-set">توضیحات عنوان پنجم</p>
+                                    <h3 class="fa-font-set">عنوان سوم</h3>
+                                    <p class="fa-font-set">توضیحات عنوان سوم</p>
+                                </div>
+                            </div>
+                                                  
+                            <div class="item">
+                                <img class="gallery-img" src="content/gallery/Desert.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h3 class="fa-font-set">عنوان دوم</h3>
+                                    <p class="fa-font-set">توضیحات عنوان دوم</p>
+                                </div>
+                            </div>
+                            
+                            <div class="item active">
+                                <img class="gallery-img" src="content/gallery/Chrysanthemum.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h3 class="fa-font-set">عنوان اول</h3>
+                                    <p class="fa-font-set">توضیحات عنوان اول</p>
                                 </div>
                             </div>
 
