@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ImageController extends Controller
+class GalleryController extends Controller
 {
     //To show all image from all category
 

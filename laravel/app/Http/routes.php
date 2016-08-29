@@ -39,14 +39,13 @@ Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => '
 
 
 
-
-
-
-
-
 Route::auth();
 //main admin
 Route::get('/admin', 'User\UserController@index');
 
 
 //Route::get('/home', 'HomeController@index');
+
+
+
+Route::post('/getmsg','AjaxController@index');
