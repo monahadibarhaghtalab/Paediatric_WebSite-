@@ -76,6 +76,67 @@ background-size: cover;
 }
 */
 
+.edu-style {
+    background-color: #FFEBF1;
+    height: 100%;
+    margin:0;
+    overflow-x: hidden;
+}
+
+.edu-container {
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.edu-caption {
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+}
+
+.edu-text {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+    
+}
+
+.img-baby1 {
+    z-index: 1000;
+    float: right;
+    right: 0px;
+    position: fixed;
+    top: 50%;
+}
+
+.img-baby2 {
+    z-index: 1000;
+    float: left;
+    left: 0px;
+    position: fixed;
+    top: 60%;
+}
+
+.img-book1 {
+    z-index: -1;
+    float: right;
+    right: 0px;
+    position: fixed;
+    top: 20%;
+}
+
+.img-book2 {
+    z-index: -1;
+    float: left;
+    left: 0px;
+    position: fixed;
+    top: 30%;
+}
+
 .body-style {
     background-color: #f1f1f1;
     /*background-image: url("content/img/home_bg_repeat.jpg");

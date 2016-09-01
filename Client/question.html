@@ -7,6 +7,7 @@
         <meta http-equiv="content-language" content="fa" />
 
         <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
         <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -19,20 +20,7 @@
 
         <link href='font.css' rel='stylesheet' type='text/css'>
 
-        <script>
-            $(document).ready(function() {
-                $(window).resize(function(e) {
-                    var qa_height = $(".question-container").height();
-                    var header_height = $(".navbar-fixed-top").height();
-                    var footer_height = $("footer").height();
-                    var body_height = $("body").height();
-                    alert("hello");
-                    /*if(qa_height > (body_height - (footer_height + header_height))) {
-                        $("img").find(".bg-img-repeat").after("<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">");
-                    }*/
-                });
-            });
-        </script>
+        
     </head>
 
     <body class="body-style question-body">
@@ -92,6 +80,26 @@
                             <p class="qa-caption-style">پاسخ</p>
                             <p class="qa-description-style qa-bottom">شرح پاسخ</p>
 
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+                            
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+                            
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+                            
+                            <p class="qa-caption-style">سوال</p>
+                            <p class="qa-description-style">شرح سوال</p>
+                            <p class="qa-caption-style">پاسخ</p>
+                            <p class="qa-description-style qa-bottom">شرح پاسخ</p>
+                            
                             <p class="qa-caption-style">سوال</p>
                             <p class="qa-description-style">شرح سوال</p>
                             <p class="qa-caption-style">پاسخ</p>
@@ -207,6 +215,21 @@
         <!-- javascript
 ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
+        <script>
+            $(document).ready(function() {
+                $(window).resize(function(e) {
+                    var qa_height = $(".question-container").height();
+                    var header_height = $(".navbar-fixed-top").height();
+                    var footer_height = $(".footer-container").height();
+                    var body_height = $(document).height();
+                    //alert("qa "+qa_height+" header "+header_height+" footer "+footer_height+" body "+body_height);
+                    if(qa_height > (body_height - (footer_height + header_height))) {
+                        alert("cond1 "+qa_height+" cond2 "+(body_height - (footer_height + header_height)));
+                        $(".bg-img-repeat").after('<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">');
+                    }
+                });
+            });
+        </script>
         <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/jquery.js"></script>
         <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-transition.js"></script>
         <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-alert.js"></script>
