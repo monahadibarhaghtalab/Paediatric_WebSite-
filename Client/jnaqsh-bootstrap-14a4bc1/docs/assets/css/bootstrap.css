@@ -1096,9 +1096,9 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 20px;
+  height: 33px;
   padding: 4px 6px;
-  margin-bottom: 10px;
+  margin-bottom: -3px;
   font-size: 14px;
   line-height: 20px;
   color: #555555;
@@ -5189,7 +5189,7 @@ input[type="submit"].btn.btn-mini {
 .modal-backdrop {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 25%s;
   bottom: 0;
   left: 0;
   z-index: 1040;
@@ -5213,7 +5213,7 @@ input[type="submit"].btn.btn-mini {
   z-index: 1050;
   width: 560px;
   margin-left: -280px;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.3);
   *border: 1px solid #999;
@@ -5235,6 +5235,10 @@ input[type="submit"].btn.btn-mini {
      -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
        -o-transition: opacity 0.3s linear, top 0.3s ease-out;
           transition: opacity 0.3s linear, top 0.3s ease-out;
+    left: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .modal.fade.in {
