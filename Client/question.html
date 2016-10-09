@@ -6,8 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="content-language" content="fa" />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
         <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
         <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -16,11 +20,43 @@
 <link rel="apple-touch-icon-precomposed" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/favicon.png">-->
 
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
         <link href="style.css" rel="stylesheet">
 
         <link href='font.css' rel='stylesheet' type='text/css'>
+        <script>
+            $(document).ready(function(){
+                $("#sign-up").click(function(){
+                    $("#log-in-content").hide();
+                    $("#sign-up-content").show(1000);
+                    $("#log-in-caption").text("ثبت نام");
+                });
+                $("#log-in-but").click(function(){
+                    $("#log-in-content").show();
+                    $("#sign-up-content").hide();
+                    $("#log-in-caption").text("ورود");
+                });
+                $(".dropdown-profile-container").mouseenter(function(){
+                    $(".dropdown-profile-caption").css("color","#cf2229");
+                    $(".dropdown-profile").css("border-color", "#cf2229");
+                });
+                $(".dropdown-profile-container").mouseleave(function(){
+                    $(".dropdown-profile-caption").css("color","darkgray");
+                    $(".dropdown-profile").css("border-color", "#007a6c");
+                });
+            });
+            
+            $('.carousel').carousel();
+            $(document).ready(function(){
+                $(".links-container").height($(".carousel-inner").height());
+                $(window).resize(function(){
+                    $(".links-container").height($(".carousel-inner").height()-20);
+                });
+            });
+        </script>
 
-        
     </head>
 
     <body class="body-style question-body">
@@ -33,14 +69,16 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="brand brand-navbar fa-font-set" href="#">دکتر نظام برحق طلب</a>
+                <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="content/img/profile.jpg" />
+                    دکتر نظام برحق طلب</a>
                 <div class="nav-collapse collapse" id="myNavbar">
                     <ul class="nav">
-                        <li class="fa-font-set"><a href="#">نوبت دهی</a></li>
-                        <li class="fa-font-set"><a href="#about">پرسش و پاسخ</a></li>
-                        <li class="fa-font-set"><a href="#contact">تماس با ما</a></li>
+                        <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li>
+                        <li class="header-menu fa-font-set"><a href="#">پرسش و پاسخ</a></li>
+                        <li class="header-menu fa-font-set"><a href="#">تماس با ما</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
+                <img class="logo-header" src="content/img/logo.png">
             </div>
         </div>
         <!--content-->
@@ -122,34 +160,21 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-container">
-            <div class="container-fluid">
-                <!--footer-->
-                <div class="row footer">
-                    <div class="row" style="z-index:100;">
-                        <div class="profile-header-container">   
-                            <div class="col-xs-3 col-rtl">
-                                <div class="profile-header-img">
-                                    <img class="img-circle" src="content/img/profile.jpg" />
-                                    <!-- badge -->
-                                    <div class="rank-label-container">
-                                        <span class="label label-default rank-label fa-font-set">دکتر نظام برحق طلب - متخصص اطفال</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-rtl">
-                                <div class="fa-font-set footer-detail">آدرس: ایران - شیراز - خیابان فلان - کوچه ی فلان - پلاک فلان - واحد فلان <br> شماره تماس: 023-13246578</div>
-                            </div>
-                            <div class="col-xs-3 col-rtl">
-                                <button type="submit" class="btn btn-default fa-font-set red-btn" data-toggle="modal" data-target="#login">ورود</button>
-                            </div>
-                        </div> 
-                    </div>
+            <!--footer-->
+            <div class="row footer">
+                <div class="row" style="z-index:100;">
+                    <div class="profile-header-container">
+                        <div class="col-xs-8 col-rtl">
+                            <div class="fa-font-set footer-detail">آدرس: ایران - شیراز - خیابان فلان - کوچه ی فلان - پلاک فلان - واحد فلان <br> شماره تماس: 023-13246578</div>
+                        </div>
+                        <div class="col-xs-3 col-rtl"><button type="submit"  class="red-btn fa-font-set" data-toggle="modal" data-target="#login">ورود</button></div>   
+                    </div> 
                 </div>
             </div>
-        </div>
 
+        </div>
 
         <!-- log in & sign up-->
         <div class="modal fade" id="login" role="dialog">
@@ -224,7 +249,7 @@
                     var body_height = $(document).height();
                     //alert("qa "+qa_height+" header "+header_height+" footer "+footer_height+" body "+body_height);
                     if(qa_height > (body_height - (footer_height + header_height))) {
-                        alert("cond1 "+qa_height+" cond2 "+(body_height - (footer_height + header_height)));
+                       // alert("cond1 "+qa_height+" cond2 "+(body_height - (footer_height + header_height)));
                         $(".bg-img-repeat").after('<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">');
                     }
                 });

@@ -61,7 +61,7 @@
 }
 
 .bg-image {
-    margin-top: 51px !important;
+    margin-top: 120px !important;
     padding-top: -1px;
 }
 
@@ -81,28 +81,56 @@ background-size: cover;
     height: 100%;
     margin:0;
     overflow-x: hidden;
+    margin-left: 24px
+}
+
+.edu-page {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .edu-container {
-    width: 80%;
+    width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
+    height: 350px;
 }
 
 .edu-caption {
     font-size: 20px !important;
     margin-bottom: 20px !important;
     margin-top: 10px !important;
+    color: #555555;
 }
 
 .edu-text {
     font-size: 14px !important;
     margin-bottom: 10px !important;
-    
+    color: #555555;
+
+}
+
+.hideOverflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+
+.edu-col-rtl {
+    position: relative;
+    /*margin-left: 0px;*/
+}
+
+.edu-col-ltl {
+    position: relative;
+    /*margin-right: 0px;*/
 }
 
 .img-baby1 {
@@ -158,6 +186,15 @@ background-size: cover;
     margin-top: 0px;
 }
 
+.header-menu {
+    position: relative;
+    margin-top: 17%;
+}
+
+.header-menu:hover{
+    color: black;
+}
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 70%;
@@ -165,40 +202,44 @@ background-size: cover;
 }
 
 .carousel-fade .carousel-inner .item {
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
 }
 .carousel-fade .carousel-inner .item,
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
-  opacity: 0;
+    opacity: 0;
 }
 .carousel-fade .carousel-inner .active,
 .carousel-fade .carousel-inner .next.left,
 .carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
+    opacity: 1;
 }
 .carousel-fade .carousel-inner .next,
 .carousel-fade .carousel-inner .prev,
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
-  left: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 .carousel-fade .carousel-control {
-  z-index: 2;
+    z-index: 2;
 }
 html,
 body,
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
-  height: 100%;
+    height: 100%;
 }
 
 .gallery-img {
     max-width: 400px !important;
+}
+
+.instagram-img {
+    max-width: 200px !important;
 }
 
 .carousel-control.right {
@@ -227,15 +268,15 @@ body,
 }
 
 .footer-container {
-    margin: 0 -20px -20px -20px !important;
+    margin: 0 -37px -20px -44px !important;
     padding-right: -20px !important;
     padding-left: -20px !important;
     overflow: hidden;
 }
 
 .footer {
-    bottom: 0;
-    width: 200%;
+    bottom: 0 !important;
+    width: 100%;
     min-height: 200px;
     background-color: #003f59;
     float: left;
@@ -243,19 +284,23 @@ body,
 
 .profile-header-container{
     margin: 0 auto;
-    text-align: center;
+    /*  text-align: center;*/
 }
 
 .profile-header-img {
-    padding: 20px;
-    position: absolute;
+    position: relative;
     right: 1%;
-}
-
-.profile-header-img > img.img-circle {
     width: 100px;
     height: 100px;
-    border: 2px solid #cf2229;
+    border: 4px solid #cf2229 !important;
+    margin-left: 10px;
+}
+
+.logo-header{
+    float: left;
+    position: relative;
+    margin-left: 3%;
+    margin-top: 5px;
 }
 
 .profile-header {
@@ -279,19 +324,24 @@ body,
 
 .footer-detail {
     direction: rtl;
-    padding-top: 100px;
+    padding-top: 70px;
+    padding-right: 80px;
     color: white;
-    font-size: 1vw;
+    font-size: 16px;
     position: absolute;
-    right: 36%;
+    /*right: 36%;*/
 }
 
 .red-btn {
     background-color: #cf2229 !important;
+    border-radius: 6px;
     color: white !important;
     -webkit-transition-duration: .3s;  
-    min-width: 20%;
-    font-size: 14px !important;
+    min-width: 30%;
+    min-height: 40px;
+    font-size: 18px !important;
+    margin-top: 60px;
+    float: left;
 }
 
 .red-btn:hover {
@@ -320,7 +370,7 @@ body,
 .qa-bottom {
     border-bottom: 1px solid darkred;
     padding-bottom: 10px;
-   /* position: inherit;*/
+    /* position: inherit;*/
     width: 50%;
 }
 
@@ -343,10 +393,11 @@ body,
 
 .modal-caption {
     color: white;
+    margin-right: 10px;
 }
 
 .modal-input {
-    width: 50%;
+    /* width: 50%;*/
 }
 
 .modal-close {
