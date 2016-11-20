@@ -48,7 +48,7 @@ class AuthController extends Controller
      */
     public function authenticate()
     {
-        if (Auth::attempt(['email' => $email, 'password' => $password]))
+        if (Auth::attempt(['username' => $username, 'password' => $password]))
         {
             return redirect('/admin');//->intended('dashboard');
         }

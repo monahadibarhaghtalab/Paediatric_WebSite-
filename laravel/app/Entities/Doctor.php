@@ -25,4 +25,10 @@ class Doctor extends Model
     {
       return $this->hasMany('App\Model\Image');
     }
+
+	//A doctor has has many links
+	public function link()
+	{
+		return $this->hasMany('App\Model\Link');
+	}
 }

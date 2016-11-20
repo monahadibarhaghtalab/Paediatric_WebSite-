@@ -1,0 +1,3 @@
+save image with name 'id'.png  to save with png !
+
+save article with image named 'id'.png

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Article;
+namespace App\Http\Controllers;
 
+use App\Entities\Article;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
+//use phpDocumentor\Reflection\Types\Integer;
 
 class ArticleController extends Controller
 {
@@ -13,9 +15,14 @@ class ArticleController extends Controller
         public function all(){
 
     	$allArticle = Article::all();
-    	return view("article\all")->with("aricles", allArticle);
+    	return view("article.all")->with("articles", $allArticle);
     }
 
+    public function show( $id){
+
+        $article = Article::find($id);
+        return view("article.show")->with("article", $article);
+    }
 
      public function creat()
     {

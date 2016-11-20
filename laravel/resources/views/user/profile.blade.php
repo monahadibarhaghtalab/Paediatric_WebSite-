@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-
-        <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -18,6 +17,17 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
         <link href='font.css' rel='stylesheet' type='text/css'>
+
+        <!--data picker-->
+        <link type="text/css" href="jquery-datepicker/styles/jquery-ui-1.8.14.css" rel="stylesheet" />
+
+        <script type="text/javascript" src="jquery-datepicker/scripts/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.core.js"></script>
+        <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc.js"></script>
+        <script type="text/javascript" src="jquery-datepicker/scripts/calendar.js"></script>
+        <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc-ar.js"></script>
+        <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc-fa.js"></script>
+
 
         <script> 
             $(document).ready(function() {
@@ -46,7 +56,17 @@
                 });
 
                 $(".ic-close").click(function(e) {
-                    $(this).parent().remove();
+                    $(this).parent().parent().remove();
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            $(function() {
+                $("#datepicker2").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    altField: '#alternate2',
+                    altFormat: 'DD، d MM yy'
                 });
             });
         </script>
@@ -77,6 +97,12 @@
                                     <a href="#" class="list-group-item text-center">
                                         <img class="bhoechie-icon" src="content/img/ic_gallery.svg">
                                     </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <img class="bhoechie-icon" src="content/img/ic_links.svg">
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <img class="bhoechie-icon" src="content/img/ic_edu.svg">
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 bhoechie-tab">
@@ -93,7 +119,7 @@
                                                         <span class="label label-default rank-label "><img src="content/img/edit.png"></span>
                                                     </div>
                                                 </div>
-                                                <div class="fa-font-set profile-phone-no" id="phone-number">دکتر نظام برحق طلب</div>
+                                                <div class="fa-font-set profile-phone-no" id="phone-number">دکتر نظام برحق طلب<span>     </span><img src="content/img/logout.png" width="20px" title="خروج"></div>
                                             </div> 
                                         </div>
 
@@ -115,6 +141,12 @@
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">نام خانوادگی</label>
                                                     <div class="col-sm-7 col-rtl">
                                                         <input type="text" class="form-control input-text" id="last-name" placeholder="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div>
+                                                        <button type="submit"  style="margin-bottom:20px;" class="btn btn-default fa-font-set red-btn">ذخیره</button>
                                                     </div>
                                                 </div>
 
@@ -153,15 +185,220 @@
                                             <li><a class="video-tab" data-toggle="tab" href="#history"><img class="tab-img" src="content/img/ic_history.svg" title="تاریخچه"></a></li>
                                         </ul>
 
-                                        <div class="tab-content col-rtl">
+                                        <div class="tab-content">
                                             <div id="futur" class="tab-pane fade">
                                                 <div class="tab-box">
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
 
                                                 </div>
                                             </div>
                                             <div id="history" class="tab-pane fade">
                                                 <div class="tab-box">
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
 
+                                                    <div class="qa_manage around-shadow">
+                                                        <div class="row">
+                                                            <img class="ic-close" src="content/img/remove.png"/>
+                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group feedback-position">
+                                                                <label class="control-label col-sm-2 col-lg-2 col-rtl fa-font-set">نام و نام خانوادگی</label>
+                                                                <div class="col-sm-10 col-lg-10 col-rtl">
+                                                                    <div class="fa-font-set input-text">
+                                                                        سه شنبه 12 مهرماه 1395 - ساعت 14 الی 15
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,21 +407,161 @@
 
                                 <!-- Question and Answer -->
                                 <div class="bhoechie-tab-content">
-                                    <center>
-                                        <div class="tab-box">
-                                            <div class="qa_manage">
-                                                <div class="qa-caption-style">عنوان پرسش</div>
-                                                <div class="qa-description-style">شرح سوال</div>
-
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-rtl">
+                                                <p class="fa-font-set col-rtl">
+                                                    <input type="text" id="alternate2" />
+                                                    <input type="text" id="datepicker2" />
+                                                    تاریخ
+                                                </p>
 
                                             </div>
+                                            <div class="col-xs-4 col-rtl">
+                                                <div class="checkbox col-rtl" style="margin-top: 0px !important;margin-bottom: 0px;!important">
+                                                    <label class="fa-font-set"><input type="checkbox" value="">نمایش پرسش های بی پاسخ</label>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </center>
+                                        <div class="tab-box" style="height:660px !important;">
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                متن پرسش
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Gallery -->
                                 <div class="bhoechie-tab-content">
                                     <center>
-                                        <div class="tab-box">
+                                        <div class="tab-box" style="height:700px !important;">
                                             <!--content-->
                                             <div class="row upload-container">
                                                 <div class="col-xs-2"></div>
@@ -233,7 +610,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -244,7 +623,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -255,7 +636,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -266,7 +649,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -277,7 +662,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -288,7 +675,9 @@
                                                     <div class="col-xs-4">
                                                         <a href="#">
                                                             <div class="thumbnail pic-container around-shadow">
-                                                                <img class="ic-close" src="content/img/remove.png">
+                                                                <div class="row">
+                                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                                </div>
                                                                 <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
                                                                     <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
@@ -304,10 +693,154 @@
 
                                         </div>
                                     </center>
-                                </div>                                
+                                </div> 
+                                <!-- links -->
+                                <div class="bhoechie-tab-content">
+                                    <div>
+                                        <div class="tab-box" style="height:700px !important;">
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                لینک
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
+                                                        <div class="col-sm-10 col-rtl">
+                                                            <div class="fa-font-set input-text">
+                                                                لینک
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="1" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">لینک</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <center>
+                                                            <button type="submit"  style="margin-bottom:20px;" class="btn btn-default fa-font-set red-btn">ذخیره</button>
+                                                        </center>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div> 
+
+                                <!-- Edu -->
+
+                                <div class="bhoechie-tab-content">
+                                    <div>
+                                        <div class="tab-box" style="height:700px !important;">
+                                            <div class="qa_manage around-shadow">
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="1" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group feedback-position">
+                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">توضیحات</label>
+                                                        <div class="comment-container col-sm-10 col-rtl">
+                                                            <textarea class="form-control input-text" rows="5" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row upload-container" style="margin-bottom:0px !important; height: 150px !important;">
+                                                        <div class="col-xs-2"></div>
+                                                        <div class="col-xs-8">
+                                                            <!-- Drop Zone -->
+                                                            <div class="row">
+                                                                <div class="upload-drop-zone fa-font-set" id="drop-zone">
+                                                                    <div class="row">
+                                                                        <div class="upload-drop-zone-btn btn btn-default space-bot fa-font-set">
+                                                                            تصویر را از رایانه خود انتخاب کنید
+                                                                            <input type="file" class="upload"/>
+                                                                        </div>
+                                                                    </div><div class="row">
+                                                                    یا بکشید و رها کنید!
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Progress Bar -->
+                                                                <div class="row space-top">
+                                                                    <div class="progress" >
+                                                                        <div class="progress-bar pb-color" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" >
+                                                                            <span class="sr-only">60%</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <center>
+                                                            <button type="submit"  style="margin-bottom:20px;" class="btn btn-default fa-font-set red-btn">ذخیره</button>
+                                                        </center>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="qa_manage around-shadow">
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                        <center>
+                                                            <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 50%;">
+                                                        </center>
+                                                        <label class="control-label col-sm-12 col-rtl fa-font-set edu-caption">عنوان</label>
+                                                        <div class="col-sm-12 col-rtl edu-text">
+                                                            <div class="fa-font-set input-text">
+                                                                توضیحات
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                     </div>
                 </div>
 
@@ -316,8 +849,70 @@
             </div>
         </div>
 
+
+        <!-- log in & sign up-->
+        <div class="modal fade" id="login" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- login content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-xs-6 col-rtl">
+                                <h4 id="log-in-caption" class="modal-title fa-font-set modal-caption">ورود</h4>
+                            </div>
+                            <div class="col-xs-6 col-rtl">
+                                <button type="button" class="close modal-close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-2"></div>
+                                <div class="col-xs-8">
+                                    <div id="log-in-content">
+                                        <div class="row" class="modal-row">
+                                            <div class="form-group">
+                                                <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="نام کاربری(انگلیسی)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="data[password]" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
+                                            </div>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <div class="checkbox" style="float: right;">
+                                                <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
+                                            </div>
+                                            <button type="submit" class="btn btn-enter fa-font-set">ورود</button>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <a class="fa-font-set col-rtl modal-text-link" href="#">اطلاعات کاربری خود را فراموش کرده‌ام</a>
+                                        </div>
+                                        <div class="row" class="modal-row">
+                                            <a id="sign-up" class="fa-font-set col-rtl modal-text-link" href="#">تاکنون حساب کاربری نساخته‌ام</a>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
+                                        <div class="form-group">
+                                            <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="کد امنیتی">
+                                        </div>
+                                        <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-2"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>

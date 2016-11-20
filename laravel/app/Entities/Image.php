@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    protected $primaryKey = 'image_id';
     //All Image belongs to one doctor
 
     public function doctor()

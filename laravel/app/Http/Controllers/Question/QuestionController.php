@@ -26,7 +26,7 @@ class QuestionController extends Controller
         public function allAnswered(){
 
     	
-    	return view("question\allAnsweredQuestion")->with("answeredQs", getAnsweredQuestion());
+    	return view("question.allAnsweredQuestion")->with("answeredQs", getAnsweredQuestion());
     }
 
 

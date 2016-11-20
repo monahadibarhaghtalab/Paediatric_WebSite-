@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePatientTable extends Migration
+class CreateLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreatePatientTable extends Migration
      */
     public function up()
     {
-        Schema::create('patient', function (Blueprint $table) {
-            $table->integer('code_id');
-            $table->primary('code_id');
-            $table->integer("D_number");
-            $table->unique("D_number");
+        //
+        Schema::create('links', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('name');
+            $table->string('url');
             $table->timestamps();
         });
     }
@@ -28,6 +28,7 @@ class CreatePatientTable extends Migration
      */
     public function down()
     {
-        Schema::drop('patient');
+        //
+        Schema::drop('links');
     }
 }

@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GalleryLinkArticleController@all');
+/*function () {
+
+
+    return View::make('welcome')
+
+});*/
 
 
 
@@ -32,6 +36,8 @@ Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'Q
 
 //article
 Route::get('/article/all', 'ArticleController@all');
+Route::get('/article/{article_id}', ['as' => 'article.show', 'uses' => 'ArticleController@show']);
+
 Route::get('/admin/article/create', ['as' => 'article.create', 'uses' => 'ArticleController@create']);
 Route::post('/admin/article/create', ['as' => 'article.store', 'uses' => 'ArticleController@store']);
 Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
@@ -39,7 +45,10 @@ Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => '
 
 
 
+
 Route::auth();
+
+
 //main admin
 Route::get('/admin', 'User\UserController@index');
 
