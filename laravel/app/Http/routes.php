@@ -46,15 +46,15 @@ Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => '
 
 
 
-Route::auth();
-
-
-//main admin
-Route::get('/admin', 'User\UserController@index');
-
-
-//Route::get('/home', 'HomeController@index');
-
-
-
 Route::post('/getmsg','AjaxController@index');
+
+//authentication
+Route::auth();
+Route::post('/admin', 'UserController@index');
+
+
+//edit user profile
+//Route::post('/edithoto', 'UserController@editPhoto');
+Route::post('/editInfo', 'UserController@editBaseInfo');
+Route::post('/editPass', 'UserController@editPass');
+

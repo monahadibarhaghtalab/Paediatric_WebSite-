@@ -37,8 +37,11 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        echo "success with username!";
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+
+
 
 
     /**
@@ -48,7 +51,7 @@ class AuthController extends Controller
      */
     public function authenticate()
     {
-        if (Auth::attempt(['username' => $username, 'password' => $password]))
+        if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
             return redirect('/admin');//->intended('dashboard');
         }

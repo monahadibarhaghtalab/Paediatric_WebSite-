@@ -160,6 +160,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
 
+        Morilog\Jalali\JalaliServiceProvider::class,
+
+
     ],
 
     /*
@@ -209,6 +212,9 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'jDateTime' => Morilog\Jalali\Facades\jDateTime::class,
 
     ],
 

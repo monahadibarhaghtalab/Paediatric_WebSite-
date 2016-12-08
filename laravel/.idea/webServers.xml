@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9c286d1c-f5ca-4345-b5db-8ac0014516e3" name="Xampp Apache" url="http://lara.dev">
+        <fileTransfer port="0" mountedRoot="/Applications/Xampp/xamppfiles/htdocs" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -51,7 +51,7 @@ return [
             'driver' => 'mysql',
             'unix_socket' => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
             'host' => '127.0.0.1',
-            'database' => 'Paediatric_Website',
+            'database' => 'Pa_Web',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',

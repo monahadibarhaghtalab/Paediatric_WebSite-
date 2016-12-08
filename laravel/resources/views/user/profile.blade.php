@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@inject('carbon', '\Carbon\Carbon')
 
 <!DOCTYPE HTML>
 <html>
@@ -27,6 +27,23 @@
         <script type="text/javascript" src="jquery-datepicker/scripts/calendar.js"></script>
         <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc-ar.js"></script>
         <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc-fa.js"></script>
+
+
+        <script  type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+        <!---- for calender --->
+        <link type="text/css" href="ui.core.css" rel="stylesheet" />
+        <link type="text/css" href="ui.theme.css" rel="stylesheet" />
+        <link type="text/css" href="ui.datepicker.css" rel="stylesheet" />
+        <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="ui.core.min.js"></script>
+        <script type="text/javascript" src="ui.datepicker-cc.min.js"></script>
+        <script type="text/javascript" src="calendar.min.js"></script>
+        <script type="text/javascript" src="ui.datepicker-cc-fa.js"></script>
+        <!--- finish -->
 
 
         <script> 
@@ -71,11 +88,28 @@
             });
         </script>
 
+
+
+
+
+
+
+
     </head>
 
     <body>
         <div class="container-fluid" style="height: 100%;">
-            <div class="page-wrap">
+            <!--- class message --->
+            <div class="flash-message" align="center">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(Session::has('alert-' . $msg))
+
+                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                    @endif
+                @endforeach
+            </div> <!-- end .flash-message -->
+
+
                 <!--website header-->
 
                 <!--content-->
@@ -107,65 +141,74 @@
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 bhoechie-tab">
                                 <!-- profile section -->
-                                <div class="bhoechie-tab-content">
+                                <div class="bhoechie-tab-content active">
                                     <div class="tab-box">
                                         <div class="row">
                                             <div class="profile-header-container">   
                                                 <div class="profile-header-img">
                                                     <img class="img-circle" src="content/img/profile.jpg" />
+                                                  <!--  <form method="POST" action="/changePhoto"/>
                                                     <input type="file" class="upload"/>
                                                     <!-- badge -->
-                                                    <div class="rank-label-container">
+                                                 <!--   <div class="rank-label-container">
                                                         <span class="label label-default rank-label "><img src="content/img/edit.png"></span>
                                                     </div>
+                                                    </form>
+                                                    --->
                                                 </div>
-                                                <div class="fa-font-set profile-phone-no" id="phone-number">دکتر نظام برحق طلب<span>     </span><img src="content/img/logout.png" width="20px" title="خروج"></div>
+                                                <div class="fa-font-set profile-phone-no" id="phone-number">دکتر نظام برحق طلب<span>     </span><a href="/logout"><img src="content/img/logout.png" width="20px" title="خروج"></a> </div>
                                             </div> 
                                         </div>
 
                                         <center>
-                                            <form class="form-horizontal" role="form">
+                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/editInfo') }}">
+                                                {{csrf_field()}}
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">ایمیل</label>
                                                     <div class="col-sm-7 col-rtl">
-                                                        <input type="email" class="form-control" id="Email" placeholder="">
+                                                        <input type="email" class="form-control" id="email" name ="email" placeholder="">
                                                     </div>
                                                 </div>
+                                                <!---
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">نام </label>
                                                     <div class="col-sm-7 col-rtl">
-                                                        <input type="text" class="form-control input-text" id="first-name" placeholder="">
+                                                        <input type="text" class="form-control input-text" id="first-name" name ="first-name" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">نام خانوادگی</label>
                                                     <div class="col-sm-7 col-rtl">
-                                                        <input type="text" class="form-control input-text" id="last-name" placeholder="">
+                                                        <input type="text" class="form-control input-text" id="last-name" name = "last-name" placeholder="">
                                                     </div>
                                                 </div>
-
+                                                ----->
                                                 <div class="form-group">
                                                     <div>
-                                                        <button type="submit"  style="margin-bottom:20px;" class="btn btn-default fa-font-set red-btn">ذخیره</button>
+                                                        <button id="btn_first" type="submit"  style="margin-bottom:20px;" class="btn btn-default fa-font-set red-btn">ذخیره</button>
                                                     </div>
                                                 </div>
-
+                                            </form>
+                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/editPass') }}">
+                                                {{csrf_field()}}
+                                                <!---
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">رمز عبور کنونی</label>
                                                     <div class="col-sm-7 col-rtl">
                                                         <input type="password" class="form-control" id="pass" placeholder="">
                                                     </div>
                                                 </div>
+                                                --->
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">رمز عبور جدید</label>
                                                     <div class="col-sm-7 col-rtl">
-                                                        <input type="password" class="form-control" id="pass" placeholder="">
+                                                        <input type="password" class="form-control" id="pass" name = "pass" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">تکرار رمز عبور جدید</label>
                                                     <div class="col-sm-7 col-rtl">
-                                                        <input type="password" class="form-control" id="pass" placeholder="">
+                                                        <input type="password" class="form-control" id="pass" name = "repeat_pass" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -173,7 +216,7 @@
                                                         <button type="submit" class="btn btn-default fa-font-set red-btn">ذخیره</button>
                                                     </div>
                                                 </div>
-                                            </form>
+                                                </form >
                                         </center>
                                     </div>
                                 </div>
@@ -411,7 +454,10 @@
                                         <div class="row">
                                             <div class="col-xs-8 col-rtl">
                                                 <p class="fa-font-set col-rtl">
-                                                    <input type="text" id="alternate2" />
+                                                    <input type="text" id="datapicker" class="hasDatepicker"/>
+
+
+
                                                     <input type="text" id="datepicker2" />
                                                     تاریخ
                                                 </p>
@@ -914,5 +960,36 @@
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+        <!---- Ajax ---------->
+
+
+        <script>
+
+                $("#btn_first").click(function () {
+//                    alert("hi");
+//                    $.post('http://lara.dev/ajax', {
+//                                param1: $("#email"),
+//                                param2: $("#first-name"),
+//                                param3: $("#last-name")
+//                            },
+//                            function (data) {
+//                                alert(data.field1 + ' ' + data.field2);
+//                            }, 'json');
+                });
+
+
+        </script>
+
+    <script>
+        $('#datepicker').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    </script>
+
+
+
     </body>
 </html>
