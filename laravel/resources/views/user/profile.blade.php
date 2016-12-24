@@ -13,11 +13,12 @@
         <link rel="stylesheet" href="style_profile.css" type="text/css" media="screen" charset="utf-8">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script  type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
         <link href='font.css' rel='stylesheet' type='text/css'>
 
+    <!---    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
         <!--data picker-->
         <link type="text/css" href="jquery-datepicker/styles/jquery-ui-1.8.14.css" rel="stylesheet" />
 
@@ -29,21 +30,9 @@
         <script type="text/javascript" src="jquery-datepicker/scripts/jquery.ui.datepicker-cc-fa.js"></script>
 
 
-        <script  type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
 
-
-        <!---- for calender --->
-        <link type="text/css" href="ui.core.css" rel="stylesheet" />
-        <link type="text/css" href="ui.theme.css" rel="stylesheet" />
-        <link type="text/css" href="ui.datepicker.css" rel="stylesheet" />
-        <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
-        <script type="text/javascript" src="ui.core.min.js"></script>
-        <script type="text/javascript" src="ui.datepicker-cc.min.js"></script>
-        <script type="text/javascript" src="calendar.min.js"></script>
-        <script type="text/javascript" src="ui.datepicker-cc-fa.js"></script>
-        <!--- finish -->
 
 
         <script> 
@@ -72,18 +61,32 @@
                     $(this).find("img").css("background-color", "#cf2229");
                 });
 
-                $(".ic-close").click(function(e) {
-                    $(this).parent().parent().remove();
-                });
+//                $(".ic-close").click(function(e) {
+//                    $(this).parent().parent().remove();
+//                });
             });
         </script>
 
         <script type="text/javascript">
             $(function() {
+
                 $("#datepicker2").datepicker({
                     dateFormat: 'dd/mm/yy',
                     altField: '#alternate2',
                     altFormat: 'DD، d MM yy'
+                });
+            });
+        </script>
+
+
+
+        <script type="text/javascript">
+            $(function() {
+
+                $('#datepicker').datepicker({
+
+                    changeMonth: true,
+                    changeYear: true
                 });
             });
         </script>
@@ -161,7 +164,7 @@
                                         </div>
 
                                         <center>
-                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/editInfo') }}">
+                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/editInfo') }}">
                                                 {{csrf_field()}}
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">ایمیل</label>
@@ -189,7 +192,7 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/editPass') }}">
+                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/editPass') }}">
                                                 {{csrf_field()}}
                                                 <!---
                                                 <div class="form-group">
@@ -454,7 +457,7 @@
                                         <div class="row">
                                             <div class="col-xs-8 col-rtl">
                                                 <p class="fa-font-set col-rtl">
-                                                    <input type="text" id="datapicker" class="hasDatepicker"/>
+                                                    <input type="text" id="datepicker" class="hasDatepicker" value="af"/>
 
 
 
@@ -609,16 +612,23 @@
                                     <center>
                                         <div class="tab-box" style="height:700px !important;">
                                             <!--content-->
+
                                             <div class="row upload-container">
                                                 <div class="col-xs-2"></div>
+
                                                 <div class="col-xs-8">
+
                                                     <!-- Drop Zone -->
                                                     <div class="row">
+
+                                                        <form class="form-horizontal" role="form" method="POST" action="/admin/uploadImage" enctype="multipart/form-data">
+
+                                                            {{csrf_field()}}
                                                         <div class="upload-drop-zone fa-font-set" id="drop-zone">
                                                             <div class="row">
                                                                 <div class="upload-drop-zone-btn btn btn-default space-bot fa-font-set">
                                                                     تصویر را از رایانه خود انتخاب کنید
-                                                                    <input type="file" class="upload"/>
+                                                                    <input type="file" name="image"  class="upload"/>
                                                                 </div>
                                                             </div><div class="row">
                                                             یا بکشید و رها کنید!
@@ -633,17 +643,19 @@
                                                             </div>
                                                         </div>
                                                         <center>
-                                                            <form class="form-horizontal" role="form">
+
                                                                 <div class="form-group">
-                                                                    <input type="text" class="form-control input-text fa-font-set" id="first-name" placeholder="توضیحات">
+                                                                    <input type="text" class="form-control input-text fa-font-set" id="title" name="title" placeholder="عنوان">
+                                                                    <input type="text" class="form-control input-text fa-font-set" id="caption" name="caption" placeholder="توضیحات">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div>
                                                                         <button type="submit" class="btn btn-default fa-font-set red-btn">بارگذاری</button>
                                                                     </div>
                                                                 </div>
-                                                            </form>
+
                                                         </center>
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-2"></div>
@@ -653,84 +665,22 @@
                                             <div class="col-xs-2"></div>
                                             <div class="col-xs-8">
                                                 <div class="row">
+                                                    @foreach ($images as $image)
                                                     <div class="col-xs-4">
-                                                        <a href="#">
+                                                        <a href={{"/admin/removeImage/".$image->image_id }}>
                                                             <div class="thumbnail pic-container around-shadow">
                                                                 <div class="row">
                                                                     <img class="ic-close" src="content/img/remove.png"/>
                                                                 </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
+                                                                <img src="{{$image->image_gallery_addr}}" class="img-responsive pic-view" >
                                                                 <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
+                                                                    <span class="hideOverflow" >{{$image->title}}  </span>
                                                                 </div>
                                                             </div>
                                                         </a>
                                                     </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="#">
-                                                            <div class="thumbnail pic-container around-shadow">
-                                                                <div class="row">
-                                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                                </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
-                                                                <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="#">
-                                                            <div class="thumbnail pic-container around-shadow">
-                                                                <div class="row">
-                                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                                </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
-                                                                <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="#">
-                                                            <div class="thumbnail pic-container around-shadow">
-                                                                <div class="row">
-                                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                                </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
-                                                                <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="#">
-                                                            <div class="thumbnail pic-container around-shadow">
-                                                                <div class="row">
-                                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                                </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
-                                                                <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="#">
-                                                            <div class="thumbnail pic-container around-shadow">
-                                                                <div class="row">
-                                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                                </div>
-                                                                <img src="content/gallery/Chrysanthemum.jpg" class="img-responsive pic-view" >
-                                                                <div class="pic-caption fa-font-set">
-                                                                    <span class="hideOverflow" >عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان  </span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
+                                                    @endforeach
+
 
 
                                                 </div>
@@ -745,49 +695,18 @@
                                     <div>
                                         <div class="tab-box" style="height:700px !important;">
                                             <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                لینک
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                لینک
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            <div class="qa_manage around-shadow">
-                                                <form class="form-horizontal" role="form">
+                                                <form class="form-horizontal" role="form" method="POST" action="/admin/uploadLink">
+                                                    {{csrf_field()}}
                                                     <div class="form-group feedback-position">
                                                         <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
                                                         <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="1" id="comment"></textarea>
+                                                            <textarea class="form-control input-text" rows="1" id="comment" name="title"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group feedback-position">
                                                         <label class="control-label col-sm-2 col-rtl fa-font-set">لینک</label>
                                                         <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
+                                                            <textarea class="form-control input-text" rows="2" id="comment" name="url"></textarea>
                                                         </div>
                                                     </div>
 
@@ -798,6 +717,37 @@
                                                     </div>
                                                 </form>
                                             </div>
+                                            @foreach ($linked_links as $link)
+                                            <div class="qa_manage around-shadow">
+                                                <a href={{"/admin/removeLink/".$link->link_id }}>
+                                                <div class="row">
+                                                    <img class="ic-close" src="content/img/remove.png"/>
+                                                </div>
+                                                    </a>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group feedback-position">
+                                                        <div class="control-label col-sm-2 col-rtl fa-font-set">عنوان
+
+                                                            :
+                                                        {{$link->title}}
+                                                        </div>
+                                                        <div class="col-sm-10 col-rtl">
+
+                                                            <div class="fa-font-set input-text">
+
+
+                                                                لینک
+:
+                                                               <a href={{"http://". $link->url}}>{{$link->url}}</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            @endforeach
+
+
 
                                         </div>
                                     </div>
@@ -810,17 +760,18 @@
                                     <div>
                                         <div class="tab-box" style="height:700px !important;">
                                             <div class="qa_manage around-shadow">
-                                                <form class="form-horizontal" role="form">
+                                                <form class="form-horizontal" role="form" method="POST" action="/admin/uploadArticle" enctype="multipart/form-data">
+                                                    {{csrf_field()}}
                                                     <div class="form-group feedback-position">
                                                         <label class="control-label col-sm-2 col-rtl fa-font-set">عنوان</label>
                                                         <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="1" id="comment"></textarea>
+                                                            <textarea class="form-control input-text" rows="1" id="comment" name="title-article"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group feedback-position">
                                                         <label class="control-label col-sm-2 col-rtl fa-font-set">توضیحات</label>
                                                         <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="5" id="comment"></textarea>
+                                                            <textarea class="form-control input-text" rows="5" id="comment" name="body-article"></textarea>
                                                         </div>
                                                     </div>
 
@@ -833,7 +784,7 @@
                                                                     <div class="row">
                                                                         <div class="upload-drop-zone-btn btn btn-default space-bot fa-font-set">
                                                                             تصویر را از رایانه خود انتخاب کنید
-                                                                            <input type="file" class="upload"/>
+                                                                            <input type="file" class="upload" name="image-article"/>
                                                                         </div>
                                                                     </div><div class="row">
                                                                     یا بکشید و رها کنید!
@@ -861,23 +812,33 @@
                                                 </form>
                                             </div>
 
+
                                             <div class="qa_manage around-shadow">
-                                                <div class="row">
+                                                @foreach ($articles as $article)
+                                                    <a href={{"/admin/removeArticle/".$article->article_id }}>
+                                                    <div class="row">
                                                     <img class="ic-close" src="content/img/remove.png"/>
                                                 </div>
+                                                        </a>
                                                 <form class="form-horizontal" role="form">
                                                     <div class="form-group">
                                                         <center>
-                                                            <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 50%;">
+                                                            <img class="img-thumbnail img-rounded" src="{{$article->image_article_addr}}" style="width: 50%;">
                                                         </center>
-                                                        <label class="control-label col-sm-12 col-rtl fa-font-set edu-caption">عنوان</label>
+                                                        <div class="control-label col-sm-12 col-rtl fa-font-set edu-caption">عنوان
+                                                       : {{$article->title}}
+                                                        </div>
                                                         <div class="col-sm-12 col-rtl edu-text">
                                                             <div class="fa-font-set input-text">
                                                                 توضیحات
+                                                            :
+                                                                {{$article->body}}
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </form>
+                                                    @endforeach
                                             </div>
 
 
@@ -982,12 +943,7 @@
 
         </script>
 
-    <script>
-        $('#datepicker').datepicker({
-            changeMonth: true,
-            changeYear: true
-        });
-    </script>
+
 
 
 

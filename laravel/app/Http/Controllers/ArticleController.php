@@ -6,6 +6,7 @@ use App\Entities\Article;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Validator, Input;
 //use App\Http\Controllers\Controller;
 //use phpDocumentor\Reflection\Types\Integer;
 
@@ -30,19 +31,6 @@ class ArticleController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
-        $article = new Article();
-        $article->title = $request->post('title');
-        $article->body = $request->post('body');
-        $article-> image_article_addr= input::file('image');
-        $article->cat = $request->post('cat');
-        
-        $article->save();
-
-        return view('article.create');
-    }
-
 
     public function edit($id){
     	$article = Article::find($id);
@@ -60,5 +48,33 @@ class ArticleController extends Controller
     	return Redirect::to('admin/article');
 
 
+    }
+
+    public function upload (Request $request){
+
+        $article = new Article();
+            
+        $destinationPath = 'Article'; // upload path
+        $test = $request->input('title-article');
+        $extension = Input::file('image-article')->getClientOriginalExtension(); // getting image extension
+        $fileName = rand(11111,99999).'.'.$extension; // renameing image
+        Input::file('image-article')->move($destinationPath, $fileName); // uploading file to given path
+
+
+        $article->title = $request->input('title-article');
+        $article->body = $request->input('body-article');
+        $article->image_article_addr = $destinationPath.'/' . $fileName;
+        $article->save();
+        // sending back with message
+        $request->session()->flash('alert-success', 'ثبت مطالب آموزشی با موفقیت انجام شد');
+        return redirect('/admin');
+    }
+
+
+    public function remove($id){
+        $article = Article::find($id);
+        $article->delete();
+
+        return redirect('/admin');
     }
 }

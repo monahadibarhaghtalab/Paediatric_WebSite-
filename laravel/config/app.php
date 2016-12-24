@@ -216,6 +216,7 @@ return [
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'jDateTime' => Morilog\Jalali\Facades\jDateTime::class,
 
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

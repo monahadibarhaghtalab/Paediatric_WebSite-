@@ -23,14 +23,12 @@ class GalleryLinkArticleController extends Controller
     //return all
     public function all(){
 
-        // return Link::all();
         $allLink = Link::all();
         $allImage = Image::all();
         $allArticle = Article::all();
 
         return view("welcome")->with("linked_links", $allLink)
             ->with("articles", $allArticle)
-            //->with('linked_links', 'LinkController@getAll')
             ->with('images',$allImage);
     }
 }

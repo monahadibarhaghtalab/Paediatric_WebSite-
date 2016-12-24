@@ -23,7 +23,10 @@ Route::get('/', 'GalleryLinkArticleController@all');
 
 
 //image of gallary
-Route::get('/gallery/all', 'ImageController@all');
+Route::get('/gallery/all', 'GalleryController@all');
+Route::post('/admin/uploadImage', 'GalleryController@upload');
+Route::get('/admin/removeImage/{id}', 'GalleryController@remove');
+
 
 
 //question
@@ -38,23 +41,26 @@ Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'Q
 Route::get('/article/all', 'ArticleController@all');
 Route::get('/article/{article_id}', ['as' => 'article.show', 'uses' => 'ArticleController@show']);
 
-Route::get('/admin/article/create', ['as' => 'article.create', 'uses' => 'ArticleController@create']);
-Route::post('/admin/article/create', ['as' => 'article.store', 'uses' => 'ArticleController@store']);
+Route::post('/admin/uploadArticle', 'ArticleController@upload');
+Route::get('/admin/removeArticle/{id}', 'ArticleController@remove');
 Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
 
 
-
+//link
+Route::post('/admin/uploadLink', 'LinkController@upload');
+Route::get('/admin/removeLink/{id}', 'LinkController@remove');
 
 
 Route::post('/getmsg','AjaxController@index');
 
 //authentication
 Route::auth();
+Route::get('/admin', 'UserController@index');
 Route::post('/admin', 'UserController@index');
 
 
 //edit user profile
 //Route::post('/edithoto', 'UserController@editPhoto');
-Route::post('/editInfo', 'UserController@editBaseInfo');
-Route::post('/editPass', 'UserController@editPass');
+Route::post('/user/editInfo', 'UserController@editBaseInfo');
+Route::post('/user/editPass', 'UserController@editPass');
 

@@ -12,6 +12,9 @@ use App\Http\Requests;
 use Validator, Input;
 
 use App\Entities\User; // should be change to user
+use App\Entities\Image;
+use App\Entities\Article;
+use App\Entities\Link;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -80,8 +83,17 @@ class UserController extends Controller
 
 
     public function index()
+
     {
-        return view('user.profile');
+
+        $allLink = Link::all();
+        $allArticle = Article::all();
+        $allImage = Image::all();
+
+        return view('user.profile')->with("linked_links", $allLink)
+            ->with("articles", $allArticle)
+            ->with('images',$allImage);
+
     }
 
 

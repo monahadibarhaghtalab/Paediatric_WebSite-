@@ -29,4 +29,26 @@ class LinkController extends Controller
         return Link::all();
     }
 
+    public function upload(Request $request){
+
+        echo "mona";
+        $link = new Link();
+        $link->title = $request->title;
+        $link->url = $request->url;
+        $link->save();
+
+        $request->session()->flash('alert-success', 'لینک به درستی ثبت شد');
+        return redirect('/admin');
+
+
+    }
+
+    public function remove($id){
+
+        $link = Link::find($id);
+        $link->delete();
+
+        return redirect('/admin');
+    }
+
 }

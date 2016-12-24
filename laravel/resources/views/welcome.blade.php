@@ -148,7 +148,7 @@ edit all needed entity
                 <span style="font-size:1.3vw;">لینک های مرتبط</span>
                 <table class="fa-font-set">
                     @foreach ($linked_links as $link)
-                        <li><a href={{'http://'.$link->url}} >{{$link->name}}</a></li>
+                        <li><a href={{'http://'.$link->url}} >{{$link->title}}</a></li>
                     @endforeach
                 </table>
             </div>
@@ -192,9 +192,9 @@ edit all needed entity
                 <table class="fa-font-set">
 
                     @foreach ($articles as $article)
-                        <li><a href={{'/article/'.$article->article_id}} >{{$link->name}}</a></li>
+                        <li><a href={{'/article/'.$article->article_id}} >{{$article->title}}</a></li>
                     @endforeach
-                    =
+
                 </table>
             </div>
         </div>
