@@ -45,7 +45,7 @@ edit all needed entity
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type='text/css'>
 
     <link href='font.css' rel='stylesheet' type='text/css'>
 
@@ -105,7 +105,7 @@ edit all needed entity
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
     <div class="container-fluid">
-        <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
+       <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -113,7 +113,7 @@ edit all needed entity
 
         <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="content/img/profile.jpg" />
             دکتر نظام برحق طلب</a>
-        <div class="nav-collapse collapse" id="myNavbar">
+        <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
             <ul class="nav">
                 <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li>
                 <li class="header-menu fa-font-set"><a href="#">پرسش و پاسخ</a></li>

@@ -301,6 +301,7 @@ body,
     position: relative;
     margin-left: 3%;
     margin-top: 5px;
+
 }
 
 .profile-header {
@@ -448,4 +449,11 @@ body,
 
 ::-webkit-scrollbar-thumb:hover {
     background: #cf2229;  
+}
+@media (min-width: 980px) {
+    .nav-collapse.collapse {
+        height: auto !important;
+        overflow: visible !important;
+        display: block;
+    }
 }
