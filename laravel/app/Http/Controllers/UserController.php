@@ -25,12 +25,12 @@ class UserController extends Controller
      *
      * @return void
      */
-//    public function __construct()
-//
-//    {
-//        echo "hiiiiii";
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+
+    {
+        echo "hiiiiii";
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Entities\Question;
 
 
 //some changes needs 
@@ -12,21 +13,11 @@ use App\Http\Requests;
 class QuestionController extends Controller
 {
 
-	private function getAnsweredQuestion(){
 
-
-        $allAnswered = \App\Entities\Question::where('is_answered', '1');
-
-
-
-
-		return $allAnswered;
-	}
     //To get all answered questions
-        public function allAnswered(){
-
-    	
-    	return view("question.allAnsweredQuestion")->with("answeredQs", getAnsweredQuestion());
+    public function allAnswered(){
+        $allAnswered = Question::where('is_answered', '1');
+    	return view("question.allAnsweredQuestion")->with("answeredQs", $allAnswered);
     }
 
 

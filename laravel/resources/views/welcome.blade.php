@@ -116,7 +116,8 @@ edit all needed entity
         <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
             <ul class="nav">
                 <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li>
-                <li class="header-menu fa-font-set"><a href="#">پرسش و پاسخ</a></li>
+                <li class="header-menu fa-font-set"><a href="/article_all">مطالب آموزشی</a></li>
+                <li class="header-menu fa-font-set"><a href="/question_all">پرسش و پاسخ</a></li>
                 <li class="header-menu fa-font-set"><a href="#">تماس با ما</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -327,11 +328,6 @@ edit all needed entity
                         <div class="col-xs-8">
                             <div id="log-in-content">
                                 <div class="row" class="modal-row">
-
-
-
-
-
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
                                     </div>

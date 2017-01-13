@@ -13,7 +13,7 @@ use Validator, Input;
 class ArticleController extends Controller
 {
     //To show all article
-        public function all(){
+    public function all(){
 
     	$allArticle = Article::all();
     	return view("article.all")->with("articles", $allArticle);

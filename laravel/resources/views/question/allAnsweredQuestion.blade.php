@@ -1,5 +1,4 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>دکتر هادی برحق طلب</title>
@@ -60,7 +59,7 @@
 
 </head>
 
-<body class="edu-style">
+<body class="body-style question-body">
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
     <div class="container-fluid">
@@ -84,146 +83,34 @@
 </div>
 <!--content-->
 <div class="container">
-    <div class="edu-over">
-        <img class="img-baby1 img-responsive" src="content/img/baby1.png">
-        <img class="img-book1 img-responsive" src="content/img/book1.png">
-        <img class="img-baby2 img-responsive" src="content/img/baby2.png">
-        <img class="img-book2 img-responsive" src="content/img/book2.png">
-        <div class="row" style="height:170px;"></div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="bg-image">
+                <img class="img-responsive" src="content/img/question_bg.jpg">
+                <div class="question-container fa-font-set">
+                    @foreach($answeredQs as $quesiton)
+                    <p class="qa-caption-style">سوال</p>
+                    <p class="qa-description-style">{{$quesiton->text}}</p>
+                    <p class="qa-caption-style">پاسخ</p>
+                    <p class="qa-description-style qa-bottom">{{$quesiton->answer}}</p>
 
-        <div class="row edu-page">
-            <div class="col-sm-6 col-rtl" href="#">
-                <div class="edu-container around-shadow edu-col-rtl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات
-                            </div>
-                        </div>
-                    </a>
+                    @endforeach
                 </div>
-            </div>
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-ltl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">1عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+                <!--<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">-->
             </div>
         </div>
-
-        <div class="row edu-page">
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-rtl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-ltl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">1عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row edu-page">
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-rtl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-ltl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">1عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row edu-page">
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-rtl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-rtl">
-                <div class="edu-container around-shadow edu-col-ltl">
-                    <a class="form-horizontal" href="#">
-                        <div class="form-group">
-                            <center>
-                                <img class="img-thumbnail img-rounded" src="content/gallery/Chrysanthemum.jpg" style="width: 70%;">
-                            </center>
-                            <div class="col-sm-12 col-rtl fa-font-set edu-caption hideOverflow">1عنوان</div>
-                            <div class="col-sm-12 col-rtl edu-text fa-font-set hideOverflow">
-                                توضیحات
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="height:100px;"></div>
     </div>
 </div>
 
@@ -303,10 +190,24 @@
         </div>
     </div>
 </div>
-
 <!-- javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script>
+    $(document).ready(function() {
+        $(window).resize(function(e) {
+            var qa_height = $(".question-container").height();
+            var header_height = $(".navbar-fixed-top").height();
+            var footer_height = $(".footer-container").height();
+            var body_height = $(document).height();
+            //alert("qa "+qa_height+" header "+header_height+" footer "+footer_height+" body "+body_height);
+            if(qa_height > (body_height - (footer_height + header_height))) {
+                // alert("cond1 "+qa_height+" cond2 "+(body_height - (footer_height + header_height)));
+                $(".bg-img-repeat").after('<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">');
+            }
+        });
+    });
+</script>
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/jquery.js"></script>
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-transition.js"></script>
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-alert.js"></script>
