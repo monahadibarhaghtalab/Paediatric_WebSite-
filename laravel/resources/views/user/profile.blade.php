@@ -1,4 +1,4 @@
-@inject('carbon', '\Carbon\Carbon')
+
 
 <!DOCTYPE HTML>
 <html>
@@ -466,147 +466,53 @@
                                                 </p>
 
                                             </div>
+
+
+
+
+
+
                                             <div class="col-xs-4 col-rtl">
                                                 <div class="checkbox col-rtl" style="margin-top: 0px !important;margin-bottom: 0px;!important">
                                                     <label class="fa-font-set"><input type="checkbox" value="">نمایش پرسش های بی پاسخ</label>
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         <div class="tab-box" style="height:660px !important;">
                                             <div class="qa_manage around-shadow">
+                                        @foreach ($questions as $question)
+                                            <a href={{"/admin/removeQuestion/".$question->question_id }}>
                                                 <div class="row">
                                                     <img class="ic-close" src="content/img/remove.png"/>
                                                 </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
+                                            </a>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group feedback-position">
+                                                    <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
+                                                    <div class="col-sm-10 col-rtl">
+                                                        <div class="fa-font-set input-text">
+                                                        {{$question->text}}
                                                         </div>
                                                     </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
+                                                </div>
+                                                <div class="form-group feedback-position">
+                                                    <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
+                                                    <div class="comment-container col-sm-10 col-rtl">
+                                                        <textarea class="form-control input-text" rows="2" id="comment">{{$question->answer}}</textarea>
                                                     </div>
-                                                </form>
+                                                </div>
+                                            </form>
+                                        @endforeach
+                                                </div>
                                             </div>
 
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
 
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
 
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            <div class="qa_manage around-shadow">
-                                                <div class="row">
-                                                    <img class="ic-close" src="content/img/remove.png"/>
-                                                </div>
-                                                <form class="form-horizontal" role="form">
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
-                                                        <div class="col-sm-10 col-rtl">
-                                                            <div class="fa-font-set input-text">
-                                                                متن پرسش
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group feedback-position">
-                                                        <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
-                                                        <div class="comment-container col-sm-10 col-rtl">
-                                                            <textarea class="form-control input-text" rows="2" id="comment"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
                                 <!-- Gallery -->
                                 <div class="bhoechie-tab-content">
                                     <center>

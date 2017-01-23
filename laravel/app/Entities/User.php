@@ -11,6 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $primaryKey = 'code_id';
+   // protected $primaryKey = 'code_id';
 
 }

@@ -30,17 +30,16 @@ Route::get('/admin/removeImage/{id}', 'GalleryController@remove');
 
 
 //question
-Route::get('/question_all', 'QuestionController@allAnswered');
+Route::get('/question_all', 'QuestionController@all');
 Route::get('/question/create', ['as' => 'question.create', 'uses' => 'QuestionController@create']);
 Route::post('/question/create', ['as' => 'question.store', 'uses' => 'QuestionController@store']);
 Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
-
+Route::get('/admin/removeQuestion/{id}',  'QuestionController@remove');
 
 
 //article
 Route::get('/article_all', 'ArticleController@all');
 Route::get('/article/{article_id}', ['as' => 'article.show', 'uses' => 'ArticleController@show']);
-
 Route::post('/admin/uploadArticle', 'ArticleController@upload');
 Route::get('/admin/removeArticle/{id}', 'ArticleController@remove');
 Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
@@ -56,7 +55,6 @@ Route::post('/getmsg','AjaxController@index');
 //authentication
 Route::auth();
 Route::get('/admin', 'UserController@index');
-Route::post('/admin', 'UserController@index');
 
 
 //edit user profile

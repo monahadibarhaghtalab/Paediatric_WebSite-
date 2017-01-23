@@ -31,7 +31,6 @@ class LinkController extends Controller
 
     public function upload(Request $request){
 
-        echo "mona";
         $link = new Link();
         $link->title = $request->title;
         $link->url = $request->url;

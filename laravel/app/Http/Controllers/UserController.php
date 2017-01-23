@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
  * Date: 8/17/2016 AD
  * Time: 19:01
  */
+
 use App\Http\Requests;
 
 use Validator, Input;
@@ -15,6 +16,7 @@ use App\Entities\User; // should be change to user
 use App\Entities\Image;
 use App\Entities\Article;
 use App\Entities\Link;
+use App\Entities\Question;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -89,15 +91,14 @@ class UserController extends Controller
         $allLink = Link::all();
         $allArticle = Article::all();
         $allImage = Image::all();
+        $allQuestion = Question::all();
 
         return view('user.profile')->with("linked_links", $allLink)
             ->with("articles", $allArticle)
-            ->with('images',$allImage);
+            ->with('images',$allImage)
+            ->with('questions',$allQuestion);;
 
     }
-
-
-
 
 
     public function editBaseInfo(Request $request){
@@ -109,9 +110,6 @@ class UserController extends Controller
         $user->email = $request->input('email');
 
         $user->save();
-
-
-
         $request->session()->flash('alert-success', 'ایمیل با موفقیت تغییر یافت');
         return redirect('/admin');
     }

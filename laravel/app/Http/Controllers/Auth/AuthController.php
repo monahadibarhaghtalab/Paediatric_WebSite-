@@ -30,6 +30,19 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/admin';
 
+//    protected function redirectTo()
+//    {
+//
+//        $allLink = Link::all();
+//        $allArticle = Article::all();
+//        $allImage = Image::all();
+//
+//        return redirect('/admin');
+//        return view('user.profile')->with("linked_links", $allLink)
+//            ->with("articles", $allArticle)
+//            ->with('images',$allImage);
+//    }
+
     /**
      * Create a new authentication controller instance.
      *

@@ -88,12 +88,11 @@
             <div class="bg-image">
                 <img class="img-responsive" src="content/img/question_bg.jpg">
                 <div class="question-container fa-font-set">
-                    @foreach($answeredQs as $quesiton)
-                    <p class="qa-caption-style">سوال</p>
-                    <p class="qa-description-style">{{$quesiton->text}}</p>
-                    <p class="qa-caption-style">پاسخ</p>
-                    <p class="qa-description-style qa-bottom">{{$quesiton->answer}}</p>
-
+                    @foreach($questions as $question)
+                        <p class="qa-caption-style">سوال</p>
+                        <p class="qa-description-style">{{$question->text}}</p>
+                        <p class="qa-caption-style">پاسخ</p>
+                        <p class="qa-description-style qa-bottom">{{$question->answer}}</p>
                     @endforeach
                 </div>
                 <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">

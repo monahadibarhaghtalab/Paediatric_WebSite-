@@ -337,7 +337,6 @@ edit all needed entity
                                         <input type="password" name="password" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
                                     </div>
 
-
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-4">
                                             <div class="row" class="modal-row">

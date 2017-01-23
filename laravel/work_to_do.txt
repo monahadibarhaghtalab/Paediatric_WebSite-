@@ -3,3 +3,8 @@ save image with name 'id'.png  to save with png !
 save article with image named 'id'.png
 
 correct admin to go just with password
+
+question and link and image inhretence
+
+porsesh o pasokh --> admin  va put question
+
