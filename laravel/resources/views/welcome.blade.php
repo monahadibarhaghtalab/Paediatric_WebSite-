@@ -105,7 +105,7 @@ edit all needed entity
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
     <div class="container-fluid">
-       <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
+        <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -121,7 +121,7 @@ edit all needed entity
                 <li class="header-menu fa-font-set"><a href="#">تماس با ما</a></li>
             </ul>
         </div><!--/.nav-collapse -->
-        <img class="logo-header" src="content/img/logo.jpg">
+        <img class="logo-header img-responsive  img-circle" src="content/img/logo.jpg" width="120px" height="120px" >
     </div>
 </div>
 
@@ -225,7 +225,7 @@ edit all needed entity
             ?>
         </div>
     </div>
-
+    {{--test simple code --}}
 
 
     <div class="row" style="margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto;">
@@ -322,67 +322,58 @@ edit all needed entity
                 </div>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                    {{ csrf_field() }}
+                <form role="form">
                     <div class="row">
+                        <div class="col-xs-2"></div>
                         <div class="col-xs-8">
                             <div id="log-in-content">
                                 <div class="row" class="modal-row">
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
+                                        <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="نام کاربری(انگلیسی)">
                                     </div>
+                                    <<<<<<< HEAD
+                                    =======
 
 
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
                                     </div>
 
+                                    >>>>>>> origin/master
                                     <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <div class="row" class="modal-row">
-                                                <button type="submit" class="btn btn-enter fa-font-set"><i class="fa fa-btn fa-sign-in"></i>ورود
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <input type="password" name="data[password]" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
                                     </div>
-
-
-
-
-
+                                </div>
+                                <div class="row" class="modal-row">
+                                    <!--- <div class="checkbox" style="float: right;">
+                                         <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
+                                     </div>--->
+                                    <button type="submit" class="btn btn-enter fa-font-set">ورود</button>
                                 </div>
 
-                                <!---<div class="checkbox" style="float: right;">
-                                    <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
-                                </div>--->
 
-
-
-                                <!---- if everybody can have profile
-                                 <div class="row" class="modal-row">
-                                     <a class="fa-font-set col-rtl modal-text-link" href="#">اطلاعات کاربری خود را فراموش کرده‌ام</a>
-
-                                 </div>
-                                 <div class="row" class="modal-row">
-                                     <a id="sign-up" class="fa-font-set col-rtl modal-text-link" href="#">تاکنون حساب کاربری نساخته‌ام</a>
-                                 </div>
-                             </div>
-
-
-                             <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
-                                 <div class="form-group">
-                                     <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
-                                 </div>
-                                 <div class="form-group">
-                                     <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="کد امنیتی">
-                                 </div>
-                                 <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
-                             </div>
----->
+                                <!---
+                                <div class="row" class="modal-row">
+                                    <a class="fa-font-set col-rtl modal-text-link" href="#">اطلاعات کاربری خود را فراموش کرده‌ام</a>
+                                </div>
+                                <div class="row" class="modal-row">
+                                    <a id="sign-up" class="fa-font-set col-rtl modal-text-link" href="#">تاکنون حساب کاربری نساخته‌ام</a>
+                                </div>
+                                --->
+                            </div>
+                            <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
+                                <div class="form-group">
+                                    <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="کد امنیتی">
+                                </div>
+                                <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
                             </div>
 
                         </div>
-                        </div>
+                        <div class="col-xs-2"></div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -410,12 +401,11 @@ edit all needed entity
 <script>
     $(document).ready(function(){
         $('.responsive').slick({
-            rtl: true,
+            rtl: false,
             dots: true,
-            infinite: true,
             speed: 300,
-            slidesToShow: 6,
-            slidesToScroll: 1,
+//            slidesToShow: 6,
+//            slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
             responsive: [
