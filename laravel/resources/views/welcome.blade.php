@@ -1,16 +1,3 @@
-<!---
-entity used in this page images, linked_links, articles
-
-url -> login
-
-edit all needed entity
-
---->
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +8,7 @@ edit all needed entity
     <meta http-equiv="content-language" content="fa" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -60,6 +47,7 @@ edit all needed entity
                 $(".dropdown-profile-caption").css("color","darkgray");
                 $(".dropdown-profile").css("border-color", "#007a6c");
             });
+
         });
 
         $('.carousel').carousel();
@@ -71,7 +59,10 @@ edit all needed entity
         });
     </script>
 
+
 </head>
+
+
 <body class="body-style home-body">
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
@@ -82,7 +73,7 @@ edit all needed entity
             <span class="icon-bar"></span>
         </button>
 
-        <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="content/img/profile.jpg" />
+        <a class="brand brand-navbar fa-font-set" href="http://www.w3schools.com/html/"><img class="profile-header-img img-circle" src="content/img/profile.jpg" />
             دکتر نظام برحق طلب</a>
         <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
             <ul class="nav">
@@ -130,17 +121,19 @@ edit all needed entity
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
 
-                    <div class="item">
 
-                        @foreach ($images as $image)
+
+                    @foreach ($images as $image)
+                       <div class="item active">
 
                             <img class="gallery-img" src={{$image->image_gallery_addr}} >
                             <div class="carousel-caption">
                                 <h3 class="fa-font-set">{{$image->title}}</h3>
                                 <p class="fa-font-set">{{$image->text}}</p>
                             </div>
+                        </div>
                         @endforeach
-                    </div>
+
 
                 </div>
 
@@ -195,11 +188,11 @@ edit all needed entity
         </div>
     </div>
 
-    {{--test simple code --}}
+    test simple code
 
 
 
-    {{--<!-- Instagram feed will be here -->--}}
+    <!-- Instagram feed will be here -->
 
     <div class="row" style="margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto;">
         <div class="responsive" data-slick='{"slidesToScroll": 1}'>
@@ -245,75 +238,11 @@ edit all needed entity
     </div>
 
 
-
-
-
-
-
-
-    <!---
-    <div class="row" style="margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-        <div class="responsive" data-slick='{"slidesToScroll": 1}'>
-
-
-            <div class="thumbnail around-shadow article-img">
-                <div class="container">
-                    <div class="row">
-
-
-
-
-
-                        {{--<?php--}}
-
-
-                        {{--foreach ($obj['data'] as $post) {--}}
-
-                            {{--$pic_text=$post['caption']['text'];--}}
-                            {{--$pic_link=$post['link'];--}}
-                            {{--$pic_like_count=$post['likes']['count'];--}}
-                            {{--$pic_comment_count=$post['comments']['count'];--}}
-                            {{--$pic_src=str_replace("http://", "https://", $post['images']['standard_resolution']['url']);--}}
-                            {{--$pic_created_time=date("F j, Y", $post['caption']['created_time']);--}}
-                            {{--$pic_created_time=date("F j, Y", strtotime($pic_created_time . " +1 days"));--}}
-
-                            {{--echo "<div class='col-md-4 col-sm-6 col-xs-12 item_box'>";--}}
-                            {{--echo "<a href='{$pic_link}' target='_blank'>";--}}
-                            {{--echo "<img src='{$pic_src}' class='img-responsive' alt='{$pic_text}'>";--}}
-                            {{--// echo "<img class='img-responsive photo-thumb' src='{$pic_src}' alt='{$pic_text}'>";--}}
-                            {{--echo "</a>";--}}
-                            {{--//echo "<p>";--}}
-                            {{--// echo "<p>";--}}
-                            {{--echo "<div style='color:#888;'>";--}}
-                            {{--echo "<a href='{$pic_link}' target='_blank'>{$pic_created_time}</a>";--}}
-                            {{--echo "</div>";--}}
-                            {{--echo "</p>";--}}
-                            {{--//echo "<p>{$pic_text}</p>";--}}
-                            {{--echo "</p>";--}}
-                            {{--echo "</div>";--}}
-                        {{--}--}}
-                        {{--?>--}}
-                                {{--<!-- Instagram feed will be here -->--}}
-
-                    </div>
-                </div>
-
-
-
-
-
-                <<!---
-                            <div class="fa-font-set">
-                                <span class="hideOverflow" >{{-- {{$article->title}} --}} </span>
-                            </div>{
-                            -->
             </div>
 
 
 
-        </div>
-    </div>
-</div>
+
 <div class="footer-container">
     <!--footer-->
     <div class="row footer">
@@ -329,9 +258,20 @@ edit all needed entity
 
 </div>
 
+
+
+
+
+
 <!-- log in & sign up-->
-<div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
+<div class="modal fade" tabindex="-1" id="login" role="dialog" style="
+
+    position: absolute;
+
+    margin-right: 400px;
+    padding: 20px;
+}">
+    <div class="modal-dialog" role="document">
 
         <!-- login content-->
         <div class="modal-content">
@@ -346,26 +286,19 @@ edit all needed entity
                 </div>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-xs-2"></div>
                         <div class="col-xs-8">
                             <div id="log-in-content">
                                 <div class="row" class="modal-row">
                                     <div class="form-group">
-                                        <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="نام کاربری(انگلیسی)">
+                                        <input type="email" name="email" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
                                     </div>
-                                    <<<<<<< HEAD
-                                    =======
-
 
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
-                                    </div>
-
-                                    >>>>>>> origin/master
-                                    <div class="form-group">
-                                        <input type="password" name="data[password]" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
                                     </div>
                                 </div>
                                 <div class="row" class="modal-row">
@@ -385,6 +318,7 @@ edit all needed entity
                                 </div>
                                 --->
                             </div>
+                            <!--
                             <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
                                 <div class="form-group">
                                     <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
@@ -394,6 +328,7 @@ edit all needed entity
                                 </div>
                                 <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
                             </div>
+                            -->
 
                         </div>
                         <div class="col-xs-2"></div>
