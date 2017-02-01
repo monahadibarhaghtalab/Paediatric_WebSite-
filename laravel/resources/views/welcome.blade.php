@@ -28,14 +28,6 @@ edit all needed entity
     <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
     <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
     <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-72-precomposed.png">
@@ -45,29 +37,9 @@ edit all needed entity
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
-    <link href="style.css" rel="stylesheet" type='text/css'>
+    <link href="style.css" rel="stylesheet">
 
     <link href='font.css' rel='stylesheet' type='text/css'>
-
-    <style type="text/css">
-        .item_box{
-            height:500px;
-        }
-
-        .photo-thumb{
-            width:100%;
-            height:auto;
-            float:left;
-            border: thin solid #d1d1d1;
-            margin:0 1em .5em 0;
-            float:left;
-        }
-    </style>
-
-
-
-
-
     <script>
         $(document).ready(function(){
             $("#sign-up").click(function(){
@@ -100,7 +72,6 @@ edit all needed entity
     </script>
 
 </head>
-
 <body class="body-style home-body">
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
@@ -203,15 +174,13 @@ edit all needed entity
     </div>
 
 
-    <!---- article -->
-
 
     <!---insta -->
 
     <div class="col-lg-12">
         <div class="page-header">
             <h1>Display Instagram Feed On Website - LEVEL 1 - Live Demo</h1>
-            <?php
+           <?php
             // use this instagram access token generator http://instagram.pixelunion.net/
             $access_token="2033081274.1677ed0.c92fbe93dca04777a6193617d0eb2007";
             $photo_count=9;
@@ -225,9 +194,64 @@ edit all needed entity
             ?>
         </div>
     </div>
+
     {{--test simple code --}}
 
 
+
+    {{--<!-- Instagram feed will be here -->--}}
+
+    <div class="row" style="margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <div class="responsive" data-slick='{"slidesToScroll": 1}'>
+
+            <?php
+
+
+
+            foreach ($obj['data'] as $post) {
+
+                $pic_text=$post['caption']['text'];
+                $pic_link=$post['link'];
+                $pic_like_count=$post['likes']['count'];
+                $pic_comment_count=$post['comments']['count'];
+                $pic_src=str_replace("http://", "https://", $post['images']['standard_resolution']['url']);
+                $pic_created_time=date("F j, Y", $post['caption']['created_time']);
+                $pic_created_time=date("F j, Y", strtotime($pic_created_time . " +1 days"));
+
+                echo "<a href='{$pic_link}' target='_blank'>";
+                echo "<div class='thumbnail around-shadow instagram-img'>";
+              //  echo "<div class='col-md-4 col-sm-6 col-xs-12 item_box'>";
+
+                echo "<img src='{$pic_src}' class='img-responsive' alt='{$pic_text}'>";
+                echo "<div class='fa-font-set'>";
+                echo "<span class='hideOverflow' >";
+                echo $pic_text;
+                echo "</span>";
+                echo  "</div>";
+                echo  "</div>";
+                // echo "<img class='img-responsive photo-thumb' src='{$pic_src}' alt='{$pic_text}'>";
+                echo "</a>";
+                //echo "<p>";
+                // echo "<p>";
+
+            }
+            ?>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!---
     <div class="row" style="margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto;">
         <div class="responsive" data-slick='{"slidesToScroll": 1}'>
 
@@ -240,36 +264,36 @@ edit all needed entity
 
 
 
-                        <?php
+                        {{--<?php--}}
 
 
-                        foreach ($obj['data'] as $post) {
+                        {{--foreach ($obj['data'] as $post) {--}}
 
-                            $pic_text=$post['caption']['text'];
-                            $pic_link=$post['link'];
-                            $pic_like_count=$post['likes']['count'];
-                            $pic_comment_count=$post['comments']['count'];
-                            $pic_src=str_replace("http://", "https://", $post['images']['standard_resolution']['url']);
-                            $pic_created_time=date("F j, Y", $post['caption']['created_time']);
-                            $pic_created_time=date("F j, Y", strtotime($pic_created_time . " +1 days"));
+                            {{--$pic_text=$post['caption']['text'];--}}
+                            {{--$pic_link=$post['link'];--}}
+                            {{--$pic_like_count=$post['likes']['count'];--}}
+                            {{--$pic_comment_count=$post['comments']['count'];--}}
+                            {{--$pic_src=str_replace("http://", "https://", $post['images']['standard_resolution']['url']);--}}
+                            {{--$pic_created_time=date("F j, Y", $post['caption']['created_time']);--}}
+                            {{--$pic_created_time=date("F j, Y", strtotime($pic_created_time . " +1 days"));--}}
 
-                            echo "<div class='col-md-4 col-sm-6 col-xs-12 item_box'>";
-                            echo "<a href='{$pic_link}' target='_blank'>";
-                            echo "<img src='{$pic_src}' class='img-responsive' alt='{$pic_text}'>";
-                            // echo "<img class='img-responsive photo-thumb' src='{$pic_src}' alt='{$pic_text}'>";
-                            echo "</a>";
-                            //echo "<p>";
-                            // echo "<p>";
-                            echo "<div style='color:#888;'>";
-                            echo "<a href='{$pic_link}' target='_blank'>{$pic_created_time}</a>";
-                            echo "</div>";
-                            echo "</p>";
-                            //echo "<p>{$pic_text}</p>";
-                            echo "</p>";
-                            echo "</div>";
-                        }
-                        ?>
-                                <!-- Instagram feed will be here -->
+                            {{--echo "<div class='col-md-4 col-sm-6 col-xs-12 item_box'>";--}}
+                            {{--echo "<a href='{$pic_link}' target='_blank'>";--}}
+                            {{--echo "<img src='{$pic_src}' class='img-responsive' alt='{$pic_text}'>";--}}
+                            {{--// echo "<img class='img-responsive photo-thumb' src='{$pic_src}' alt='{$pic_text}'>";--}}
+                            {{--echo "</a>";--}}
+                            {{--//echo "<p>";--}}
+                            {{--// echo "<p>";--}}
+                            {{--echo "<div style='color:#888;'>";--}}
+                            {{--echo "<a href='{$pic_link}' target='_blank'>{$pic_created_time}</a>";--}}
+                            {{--echo "</div>";--}}
+                            {{--echo "</p>";--}}
+                            {{--//echo "<p>{$pic_text}</p>";--}}
+                            {{--echo "</p>";--}}
+                            {{--echo "</div>";--}}
+                        {{--}--}}
+                        {{--?>--}}
+                                {{--<!-- Instagram feed will be here -->--}}
 
                     </div>
                 </div>
@@ -383,6 +407,7 @@ edit all needed entity
 <!-- javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/jquery.js"></script>
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-transition.js"></script>
 <script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-alert.js"></script>
@@ -401,11 +426,12 @@ edit all needed entity
 <script>
     $(document).ready(function(){
         $('.responsive').slick({
-            rtl: false,
+            rtl: true,
             dots: true,
+            infinite: true,
             speed: 300,
-//            slidesToShow: 6,
-//            slidesToScroll: 1,
+            slidesToShow: 6,
+            slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
             responsive: [
