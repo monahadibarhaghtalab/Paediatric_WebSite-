@@ -50,7 +50,6 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        echo "success with username!";
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 

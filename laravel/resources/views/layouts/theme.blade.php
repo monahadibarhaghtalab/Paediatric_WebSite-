@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,20 +13,20 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
-    <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/jnaqsh-bootstrap-14a4bc1/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="jnaqsh-bootstrap-14a4bc1/docs/assets/ico/favicon.png">-->
 
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 
-    <link href='font.css' rel='stylesheet' type='text/css'>
+    <link href='/font.css' rel='stylesheet' type='text/css'>
     <script>
         $(document).ready(function(){
             $("#sign-up").click(function(){
@@ -46,6 +47,7 @@
                 $(".dropdown-profile-caption").css("color","darkgray");
                 $(".dropdown-profile").css("border-color", "#007a6c");
             });
+
         });
 
         $('.carousel').carousel();
@@ -57,10 +59,14 @@
         });
     </script>
 
+
 </head>
 
-<body class="body-style question-body">
+
+<body class="body-style home-body">
+
 <!--header-->
+
 <div class="navbar navbar-fixed-top header-style">
     <div class="container-fluid">
         <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
@@ -69,49 +75,31 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="content/img/profile.jpg" />
+        <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="/content/img/profile.jpg" />
             دکتر نظام برحق طلب</a>
-        <div class="nav-collapse collapse" id="myNavbar">
+        <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
             <ul class="nav">
-                <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li>
-                <li class="header-menu fa-font-set"><a href="#">پرسش و پاسخ</a></li>
-                <li class="header-menu fa-font-set"><a href="#">تماس با ما</a></li>
+                <!-- <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li> -->
+                <li class="header-menu fa-font-set"><a href="/">خانه</a></li>
+                <li class="header-menu fa-font-set"><a href="/article_all">مطالب آموزشی</a></li>
+                <li class="header-menu fa-font-set"><a href="/question_all">پرسش و پاسخ</a></li>
+                <li class="header-menu fa-font-set"><a href="/contact_us">تماس با ما</a></li>
             </ul>
         </div><!--/.nav-collapse -->
-        <img class="logo-header" src="content/img/logo.png">
+        <img class="logo-header img-responsive  img-circle" src="/content/img/logo.jpg" width="120px" height="120px" >
     </div>
 </div>
-<!--content-->
-<div class="container">
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="bg-image">
-                <img class="img-responsive" src="content/img/question_bg.jpg">
-                <div class="question-container fa-font-set">
-                    @foreach($questions as $question)
-                        <p class="qa-caption-style">سوال</p>
-                        <p class="qa-description-style">{{$question->text}}</p>
-                        <p class="qa-caption-style">پاسخ</p>
-                        <p class="qa-description-style qa-bottom">{{$question->answer}}</p>
-                    @endforeach
-                </div>
-                <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-                <!--<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
 
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
 
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
 
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
-<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">-->
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+@yield('content')
+
+
+
+
 
 <div class="footer-container">
     <!--footer-->
@@ -119,18 +107,36 @@
         <div class="row" style="z-index:100;">
             <div class="profile-header-container">
                 <div class="col-xs-8 col-rtl">
-                    <div class="fa-font-set footer-detail">آدرس: ایران - شیراز - خیابان فلان - کوچه ی فلان - پلاک فلان - واحد فلان <br> شماره تماس: 023-13246578</div>
+<div style="width:100%;
+    text-align: center;">
+
+
+
+                    <div class="fa-font-set footer-detail" style="display: inline-block; margin-left: -150px; margin-right: -50px">آدرس: ایران - شیراز - خیابان نادر -چهارراه گمرک - ساختمان نادر - واحد ۳۰۳ <br> شماره تماس:۳۲۳۲۲۴۸۹-۰۷۱</div>
+                   <div class="col-xs-3 col-rtl" style="display: inline-block;"><button type="submit"  class="red-btn fa-font-set" data-toggle="modal" data-target="#login">ورود</button></div>
+</div>
                 </div>
-                <div class="col-xs-3 col-rtl"><button type="submit"  class="red-btn fa-font-set" data-toggle="modal" data-target="#login">ورود</button></div>
+
             </div>
         </div>
     </div>
 
 </div>
 
+
+
+
+
+
 <!-- log in & sign up-->
-<div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
+<div class="modal fade" tabindex="-1" id="login" role="dialog" style="
+
+    position: absolute;
+
+    margin-right: 400px;
+    padding: 20px;
+}">
+    <div class="modal-dialog" role="document">
 
         <!-- login content-->
         <div class="modal-content">
@@ -145,32 +151,39 @@
                 </div>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-xs-2"></div>
                         <div class="col-xs-8">
                             <div id="log-in-content">
                                 <div class="row" class="modal-row">
                                     <div class="form-group">
-                                        <input type="text" name="data[username]" id="username" value="" class="form-control modal-input fa-font-set " placeholder="نام کاربری(انگلیسی)">
+                                        <input type="email" name="email" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
                                     </div>
+
                                     <div class="form-group">
-                                        <input type="password" name="data[password]" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
+                                        <input type="password" name="password" id="password" value="" class="form-control modal-input fa-font-set" placeholder="رمز عبور">
                                     </div>
                                 </div>
                                 <div class="row" class="modal-row">
-                                    <div class="checkbox" style="float: right;">
-                                        <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
-                                    </div>
+                                    <!--- <div class="checkbox" style="float: right;">
+                                         <label><input type="checkbox"><span class="fa-font-set">من را به خاطر بسپار</span></label>
+                                     </div>--->
                                     <button type="submit" class="btn btn-enter fa-font-set">ورود</button>
                                 </div>
+
+
+                                <!---
                                 <div class="row" class="modal-row">
                                     <a class="fa-font-set col-rtl modal-text-link" href="#">اطلاعات کاربری خود را فراموش کرده‌ام</a>
                                 </div>
                                 <div class="row" class="modal-row">
                                     <a id="sign-up" class="fa-font-set col-rtl modal-text-link" href="#">تاکنون حساب کاربری نساخته‌ام</a>
                                 </div>
+                                --->
                             </div>
+                            <!--
                             <div class="row" id="sign-up-content" class="modal-row" style="display:none;">
                                 <div class="form-group">
                                     <input type="email" name="data[email]" id="email" value="" class="form-control modal-input fa-font-set " placeholder="ایمیل">
@@ -180,6 +193,7 @@
                                 </div>
                                 <button type="submit" class="btn button-upload fa-font-set">ثبت نام</button>
                             </div>
+                            -->
 
                         </div>
                         <div class="col-xs-2"></div>
@@ -189,38 +203,76 @@
         </div>
     </div>
 </div>
+
+
+<!--<script src="http://code.jquery.com/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>-->
+
+
+
+
 <!-- javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/jquery.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-transition.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-alert.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-modal.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-dropdown.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-scrollspy.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-tab.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-tooltip.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-popover.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-button.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-collapse.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-carousel.js"></script>
+<script src="/jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-typeahead.js"></script>
+
+<script type="text/javascript" src="/slick/slick.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $(window).resize(function(e) {
-            var qa_height = $(".question-container").height();
-            var header_height = $(".navbar-fixed-top").height();
-            var footer_height = $(".footer-container").height();
-            var body_height = $(document).height();
-            //alert("qa "+qa_height+" header "+header_height+" footer "+footer_height+" body "+body_height);
-            if(qa_height > (body_height - (footer_height + header_height))) {
-                // alert("cond1 "+qa_height+" cond2 "+(body_height - (footer_height + header_height)));
-                $(".bg-img-repeat").after('<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">');
-            }
+    $(document).ready(function(){
+        $('.responsive').slick({
+            rtl: true,
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
         });
+
     });
 </script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/jquery.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-transition.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-alert.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-modal.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-dropdown.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-scrollspy.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-tab.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-tooltip.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-popover.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-button.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-collapse.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-carousel.js"></script>
-<script src="jnaqsh-bootstrap-14a4bc1/docs/assets/js/bootstrap-typeahead.js"></script>
-<!--<script src="http://code.jquery.com/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>-->
+
 </body>
 </html>

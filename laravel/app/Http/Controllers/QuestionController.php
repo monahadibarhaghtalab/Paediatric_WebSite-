@@ -31,12 +31,15 @@ class QuestionController extends Controller
         public function store(Request $request)
     {
         $question = new Question();
-        $question->title = $request->post('title');
-        $question->body = $request->post('body');
-        
+        $question->name = $request->name;
+        $question->email = $request->email;
+        $question->text = $request->text;
+
         $question->save();
 
-        return view('question.all')->with('answeredQs', getAnsweredQuestion());
+        $allAnswered = Question::where('is_answered', '1');
+
+        return view('question.all')->with('answeredQs', $allAnswered);
     }
 
 
@@ -53,7 +56,7 @@ class QuestionController extends Controller
         $question  = Question::find($id);
         $question->delete();
 
-        return Redirect::to(admin);
+        return redirect('/admin');
 
     }
 

@@ -20,6 +20,7 @@ Route::get('/', 'GalleryLinkArticleController@all');
 });*/
 
 
+Route::get('contact_us', 'ContactController@getContact');
 
 
 //image of gallary
@@ -31,8 +32,7 @@ Route::get('/admin/removeImage/{id}', 'GalleryController@remove');
 
 //question
 Route::get('/question_all', 'QuestionController@all');
-Route::get('/question/create', ['as' => 'question.create', 'uses' => 'QuestionController@create']);
-Route::post('/question/create', ['as' => 'question.store', 'uses' => 'QuestionController@store']);
+Route::post('/question_store',  'QuestionController@store');
 Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
 Route::get('/admin/removeQuestion/{id}',  'QuestionController@remove');
 
@@ -61,4 +61,11 @@ Route::get('/admin', 'UserController@index');
 //Route::post('/edithoto', 'UserController@editPhoto');
 Route::post('/user/editInfo', 'UserController@editBaseInfo');
 Route::post('/user/editPass', 'UserController@editPass');
+
+
+
+
+
+//contact
+
 

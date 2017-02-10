@@ -76,6 +76,10 @@ background-size: cover;
 }
 */
 
+.simple-page{
+    position: relative;
+}
+
 .edu-style {
     background-color: #FFEBF1;
     height: 100%;
@@ -341,7 +345,6 @@ body,
     min-height: 40px;
     font-size: 18px !important;
     margin-top: 60px;
-    float: left;
 }
 
 .red-btn:hover {
