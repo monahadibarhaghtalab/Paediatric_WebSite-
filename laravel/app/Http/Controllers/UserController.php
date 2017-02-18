@@ -30,7 +30,6 @@ class UserController extends Controller
     public function __construct()
 
     {
-        echo "hiiiiii";
         $this->middleware('auth');
     }
 

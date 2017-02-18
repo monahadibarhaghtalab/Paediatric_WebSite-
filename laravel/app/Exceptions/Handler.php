@@ -8,6 +8,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use InvalidArgumentException;
 
 class Handler extends ExceptionHandler
 {
@@ -44,7 +45,33 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $e)
+
     {
-        return parent::render($request, $e);
+
+       // return redirect('not_found');
+        if ($this->isHttpException($e)) {
+            switch ($e->getStatusCode()) {
+                // not found
+                case 404:
+                    return redirect('not_found');
+                    break;
+
+                // internal error
+                case 500:
+                    return redirect('not_found');
+                    break;
+
+                default:
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        } else {
+
+            if(($e instanceof InvalidArgumentException) && str_contains($e->getFile(), 'Illuminate/View/FileViewFinder'))
+                return redirect('not_found');
+
+            else
+                return parent::render($request, $e);
+        }
     }
 }

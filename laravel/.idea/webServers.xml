@@ -5,6 +5,14 @@
       <webServer id="9c286d1c-f5ca-4345-b5db-8ac0014516e3" name="Xampp Apache" url="http://lara.dev">
         <fileTransfer port="0" mountedRoot="/Applications/Xampp/xamppfiles/htdocs" accessType="MOUNT" />
       </webServer>
+      <webServer id="35b30184-97b7-4f04-b296-a80a50874911" name="TestHost" url="http://78.46.79.115">
+        <fileTransfer host="78.46.79.115" port="21" password="dfcddfdedf9edf9adfc0dfefdfebdfdddf9ddfc1dfc5dfc3dfe1dfec" username="fraalab">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

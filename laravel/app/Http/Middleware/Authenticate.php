@@ -25,7 +25,7 @@ class Authenticate
             }
         }
 
-        echo "monaaaaa";
+        
         return $next($request);
     }
 }

@@ -1,45 +1,41 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@extends('layouts/theme')
+@section('content')
 
         <style>
-            html, body {
-                height: 100%;
+            div.img {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 300px;
             }
 
-            body {
-                margin: 0;
-                padding: 0;
+            div.img:hover {
+                border: 1px solid #777;
+            }
+
+            div.img img {
                 width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
+                height: 250px;
             }
 
-            .container {
+            div.desc {
+                padding: 15px;
                 text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
             }
         </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+        <div class="container" >
+
+            <div class="row" style="height:170px;"></div>
+        @foreach($images as $image)
+
+    <div class="img col-rtl">
+        <a target="_blank" href="#">
+            <img src={{$image->image_gallery_addr}} alt="Fjords" >
+        </a>
+        <div class="desc fa-font-set">{{$image->title}}</div>
+    </div>
+
+
+@endforeach
+    </div>
+@endsection

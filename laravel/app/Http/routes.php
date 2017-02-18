@@ -19,53 +19,60 @@ Route::get('/', 'GalleryLinkArticleController@all');
 
 });*/
 
-
+//contact
 Route::get('contact_us', 'ContactController@getContact');
 
 
 //image of gallary
-Route::get('/gallery/all', 'GalleryController@all');
-Route::post('/admin/uploadImage', 'GalleryController@upload');
-Route::get('/admin/removeImage/{id}', 'GalleryController@remove');
+Route::get('gallery_all', 'GalleryController@all');
+Route::post('admin/uploadImage', 'GalleryController@upload');
+Route::get('admin/removeImage/{id}', 'GalleryController@remove');
 
 
 
 //question
-Route::get('/question_all', 'QuestionController@all');
-Route::post('/question_store',  'QuestionController@store');
-Route::get('/admin/answer/edit/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
-Route::get('/admin/removeQuestion/{id}',  'QuestionController@remove');
+Route::get('question_all', 'QuestionController@all');
+Route::post('question_store',  'QuestionController@store');
+Route::get('question_update/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
+Route::get('admin/removeQuestion/{id}',  'QuestionController@remove');
 
 
 //article
-Route::get('/article_all', 'ArticleController@all');
-Route::get('/article/{article_id}', ['as' => 'article.show', 'uses' => 'ArticleController@show']);
-Route::post('/admin/uploadArticle', 'ArticleController@upload');
-Route::get('/admin/removeArticle/{id}', 'ArticleController@remove');
-Route::get('/admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
+Route::get('article_all', 'ArticleController@all');
+Route::get('article/{article_id}', ['as' => 'article.show', 'uses' => 'ArticleController@show']);
+Route::post('admin/uploadArticle', 'ArticleController@upload');
+Route::get('admin/removeArticle/{id}', 'ArticleController@remove');
+Route::get('admin/article/edit/{article}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
 
 
 //link
-Route::post('/admin/uploadLink', 'LinkController@upload');
-Route::get('/admin/removeLink/{id}', 'LinkController@remove');
+Route::post('admin/uploadLink', 'LinkController@upload');
+Route::get('admin/removeLink/{id}', 'LinkController@remove');
 
 
-Route::post('/getmsg','AjaxController@index');
+Route::post('getmsg','AjaxController@index');
 
 //authentication
 Route::auth();
-Route::get('/admin', 'UserController@index');
+Route::get('admin', 'UserController@index');
 
 
 //edit user profile
 //Route::post('/edithoto', 'UserController@editPhoto');
-Route::post('/user/editInfo', 'UserController@editBaseInfo');
-Route::post('/user/editPass', 'UserController@editPass');
+Route::post('user/editInfo', 'UserController@editBaseInfo');
+Route::post('user/editPass', 'UserController@editPass');
 
 
 
+//Not Found 404
+Route::get('not_found', function () {
 
 
-//contact
+    return View::make('not_found');
+
+});
+
+
+
 
 

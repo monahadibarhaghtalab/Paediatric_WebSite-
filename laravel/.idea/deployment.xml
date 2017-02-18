@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Xampp Apache" />
+  <component name="PublishConfigData" serverName="TestHost">
+    <serverData>
+      <paths name="TestHost">
+        <serverdata>
+          <mappings>
+            <mapping deploy="test" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
 </project>

@@ -17,7 +17,7 @@ class QuestionController extends Controller
     //To get all answered questions
     public function all(){
         $allAnswered = Question::where('is_answered', '1');
-    	return view("question.question")->with("answeredQs", $allAnswered);
+    	return view("question.all")->with("answeredQs", $allAnswered);
     }
 
 

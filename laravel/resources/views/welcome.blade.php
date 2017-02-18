@@ -29,13 +29,13 @@
                 <div class="carousel-inner" role="listbox">
 
 
-                    <?php $flag = 1; ?>
+                    <?php $flag = 0; ?>
                     @foreach ($images as $image)
 
 
 
-                    <div class="item {{ $flag % count($images) == 0 ? 'active': '' }} ">
-                        {{$flag}}
+                    <div class="item {{ $flag == 0 ? 'active': '' }} ">
+
 
                             <img class="gallery-img" style="height: 400px; width: 640px;"   src={{$image->image_gallery_addr}}  >
                             <div class="carousel-caption">
@@ -44,6 +44,7 @@
                             </div>
 
                     </div>
+
                             <?php $flag = $flag + 1; ?>
                         @endforeach
                 </div>

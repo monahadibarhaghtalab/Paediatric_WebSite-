@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>دکتر هادی برحق طلب</title>
+    <title>دکتر نظام برحق طلب</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="fa" />
@@ -75,18 +75,22 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="brand brand-navbar fa-font-set" href="#"><img class="profile-header-img img-circle" src="/content/img/profile.jpg" />
-            دکتر نظام برحق طلب</a>
+        <a class="brand brand-navbar fa-font-set" href="/"><img class="profile-header-img img-circle" src="/content/img/profile.jpg" />
+            دکتر نظام هادی برحق طلب</a>
+        <img class=" img-responsive " src="/content/img/shafi.png" width="50px" height="50px"  style="margin-right: 600px" >
+        <img class="logo-header img-responsive  img-circle" src="/content/img/logo.jpg" width="120px" height="120px"  style="margin-top: -30px;">
         <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
             <ul class="nav">
                 <!-- <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li> -->
                 <li class="header-menu fa-font-set"><a href="/">خانه</a></li>
                 <li class="header-menu fa-font-set"><a href="/article_all">مطالب آموزشی</a></li>
                 <li class="header-menu fa-font-set"><a href="/question_all">پرسش و پاسخ</a></li>
+                <li class="header-menu fa-font-set"><a href="/gallery_all">گالری</a></li>
                 <li class="header-menu fa-font-set"><a href="/contact_us">تماس با ما</a></li>
             </ul>
         </div><!--/.nav-collapse -->
-        <img class="logo-header img-responsive  img-circle" src="/content/img/logo.jpg" width="120px" height="120px" >
+
+
     </div>
 </div>
 
@@ -104,6 +108,9 @@
 <div class="footer-container">
     <!--footer-->
     <div class="row footer">
+        <a href="https://www.instagram.com/dr.barhaghtalab">
+        <img class="logo-header img-responsive " src="/content/img/insta.png" width="50px" height="50px" style="margin-left: 150px; margin-top: 55px;" >
+        </a>
         <div class="row" style="z-index:100;">
             <div class="profile-header-container">
                 <div class="col-xs-8 col-rtl">
@@ -121,7 +128,7 @@
         </div>
     </div>
 
-</div>
+
 
 
 
@@ -204,7 +211,7 @@
     </div>
 </div>
 
-
+</div>
 <!--<script src="http://code.jquery.com/jquery.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>-->
 
