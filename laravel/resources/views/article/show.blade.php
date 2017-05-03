@@ -1,6 +1,4 @@
-@extends("layouts.theme")
 
-@section('content')
 
 
         <!--content-->

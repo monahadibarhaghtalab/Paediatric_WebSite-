@@ -38,5 +38,5 @@
         }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm05PUT_V40QwNC8A3-19Rp4O7qmD5g0&callback=myMap"></script>
 @endsection
