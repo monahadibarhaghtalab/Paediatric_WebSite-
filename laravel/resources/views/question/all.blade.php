@@ -8,10 +8,10 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12">
-            <div class="bg-image">
-                <img class="img-responsive" src="content/img/question_bg.jpg">
-                <div class="question-container fa-font-set">
-                    <div style="padding:20px;">
+            <div class="bg-image" style="overflow-y:hidden;overflow-x: hidden;">
+                <img class="img-responsive" src="content/img/question_bg.jpg" >
+                <div class="question-container fa-font-set" >
+                    <div >
 
 
                         <h1 style="padding-right: 14px;padding-top: 54px; font-size:24px; "> سوالات خود را در فرم زیر ثبت کنید:</h1>
@@ -28,18 +28,27 @@
                             <br>
                             <br>
                             <div style="padding-right:170px; ">  <button type="submit" class="red-btn fa-font-set" style="margin-top: 20px; margin-left: 700px;">ثبت سوال</button></div>
-                        </form></div><br>
+                        </form>
 
 
-
-                @foreach($answeredQs as $question)
-                        <p class="qa-caption-style">سوال</p>
-                        <p class="qa-description-style">{{$question->text}}</p>
-                        <p class="qa-caption-style">پاسخ</p>
-                        <p class="qa-description-style qa-bottom">{{$question->answer}}</p>
-                    @endforeach
                 </div>
-                <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
+                </div>
+                @foreach($answeredQs as $question)
+                    <img class="img-responsive" src="content/img/question_bg-repeat.jpg" >
+                <div class="question-container-answer fa-font-set" >
+                    <div >
+
+                            <p class="qa-caption-style"> سوال:</p>
+                            <p class="qa-description-style">{{$question->text}}</p>
+                            <p class="qa-caption-style">پاسخ:</p>
+                            <p class="qa-description-style qa-bottom">{{$question->answer}}</p>
+
+
+                    </div>
+                </div>
+
+                @endforeach
+
                 <!--<img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
 <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">
 <img class="img-responsive bg-img-repeat" src="content/img/question_bg-repeat.jpg">

@@ -16,7 +16,7 @@ class QuestionController extends Controller
 
     //To get all answered questions
     public function all(){
-        $allAnswered = Question::where('is_answered', '1');
+        $allAnswered = Question::where('is_answered', '1')->get();
     	return view("question.all")->with("answeredQs", $allAnswered);
     }
 
@@ -37,7 +37,7 @@ class QuestionController extends Controller
 
         $question->save();
 
-        $allAnswered = Question::where('is_answered', '1');
+        $allAnswered = Question::where('is_answered', '1')->get();
 
         return view('question.all')->with('answeredQs', $allAnswered);
     }
@@ -61,14 +61,14 @@ class QuestionController extends Controller
     }
 
 
-     public function updateAnswer(Request $request){
-         $question = Question::find($request->post('id'));
+     public function storeAns(Request $request, $id){
+         $question = Question::find($id);
 
-    	$question->answer = $request->post('answer');
+    	$question->answer = $request->answer;
     	$question->is_answered = 1;
     	$question->save();
 
-    	return Redirect::to(admin/question);
+    	return redirect('/admin');
 
     }
 

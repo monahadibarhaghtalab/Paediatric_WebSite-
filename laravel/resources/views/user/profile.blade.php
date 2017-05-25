@@ -488,7 +488,8 @@
                                                     <img class="ic-close" src="content/img/remove.png"/>
                                                 </div>
                                             </a>
-                                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/question/store') }}">
+                                            <form class="form-horizontal" role="form" method="get" action="{{ url('/question/storeAns/'.$question->question_id ) }}">
+                                                {{csrf_field()}}
                                                 <div class="form-group feedback-position">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">پرسش</label>
                                                     <div class="col-sm-10 col-rtl">
@@ -500,7 +501,7 @@
                                                 <div class="form-group feedback-position">
                                                     <label class="control-label col-sm-2 col-rtl fa-font-set">پاسخ</label>
                                                     <div class="comment-container col-sm-10 col-rtl">
-                                                        <textarea class="form-control input-text" rows="2" id="comment">{{$question->answer}}</textarea>
+                                                        <textarea class="form-control input-text" rows="2" id="comment" name="answer">{{$question->answer}}</textarea>
                                                     </div>
                                                     <button type="submit" class="btn btn-enter fa-font-set">ثبت</button>
                                                 </div>

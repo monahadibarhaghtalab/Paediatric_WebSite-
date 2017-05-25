@@ -51,7 +51,7 @@
 .bg-image{
     display: block;
     width: 100%;
-    max-width: 1200px; /* corresponds to max height of 450px */
+    /*max-width: 1200px; !* corresponds to max height of 450px *!*/
     margin: 0 auto;
 }
 
@@ -354,12 +354,24 @@ body,
 }
 
 .question-container {
-    position: absolute; 
-    top: 180px;
-    right: 26%; 
-    width: 100%; 
+     position: absolute;
+     top: 180px;
+     right: 26%;
+     width: 100%;
+ }
+
+.question-container-answer {
+    position: absolute;
+    top: 800px;/*shoule change*/
+    right: 26%;
+    width: 100%;
 }
 
+#container_ans {
+    background: url(content/img/question_bg-repeat.jpg) no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .qa-caption-style {
     font-size: 1.5vw;
     direction: rtl;

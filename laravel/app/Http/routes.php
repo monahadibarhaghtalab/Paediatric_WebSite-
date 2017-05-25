@@ -34,6 +34,7 @@ Route::get('admin/removeImage/{id}', 'GalleryController@remove');
 Route::get('question_all', 'QuestionController@all');
 Route::post('question_store',  'QuestionController@store');
 Route::get('question_update/{question}', ['as' => 'answer.edit', 'uses' => 'QuestionController@edit']);//to edit answer by admin
+Route::get('question/storeAns/{id}',  'QuestionController@storeAns');
 Route::get('admin/removeQuestion/{id}',  'QuestionController@remove');
 
 

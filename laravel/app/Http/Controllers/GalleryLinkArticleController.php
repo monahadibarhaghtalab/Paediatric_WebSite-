@@ -25,12 +25,12 @@ class GalleryLinkArticleController extends Controller
 
         $allLink = Link::all();
         $allImage = Image::all();
-        $imageZardi = User::find('1');
-        
-        foreach ($allImage as $image){
-
-
-        }
+//        $imageZardi = User::find('1');
+//
+//        foreach ($allImage as $image){
+//
+//
+//        }
         $allArticle = Article::all();
 
         return view("welcome")->with("linked_links", $allLink)
