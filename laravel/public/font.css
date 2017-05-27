@@ -27,20 +27,20 @@
 @font-face {
   font-family: 'B Koodak';
   font-style: normal;
-  src: url(/fonts/BKoodakBold.eot);
-  src: url(/fonts/BKoodakBold.eot?#iefix) format('embedded-opentype'),
-       url(/fonts/BKoodakBold.woff) format('woff2'),
-       url(/fonts/BKoodakBold.woff) format('woff'),
-       url(/fonts/BKoodakBold.ttf) format('truetype');
+  /*src: url(/fonts/BKoodakBold.eot);*/
+  /*src: url(/fonts/BKoodakBold.eot?#iefix) format('embedded-opentype'),*/
+       /*url(/fonts/BKoodakBold.woff) format('woff2'),*/
+       /*url(/fonts/BKoodakBold.woff) format('woff'),*/
+       /*url(/fonts/BKoodakBold.ttf) format('truetype');*/
 }
 
 @font-face {
   font-family: 'B Koodak';
   font-style: Bold;
   font-weight: 700;
-  src: url(/fonts/BKoodakBoldBold.eot);
-  src: url(/fonts/BKoodakBoldBold.eot?#iefix) format('embedded-opentype'),
-       url(/fonts/BKoodakBoldBold.woff) format('woff2'),
-       url(/fonts/BKoodakBoldBold.woff) format('woff'),
-       url(/fonts/BKoodakBoldBold.ttf) format('truetype');
+  /*src: url(/fonts/BKoodakBoldBold.eot);*/
+  /*src: url(/fonts/BKoodakBoldBold.eot?#iefix) format('embedded-opentype'),*/
+       /*url(/fonts/BKoodakBoldBold.woff) format('woff2'),*/
+       /*url(/fonts/BKoodakBoldBold.woff) format('woff'),*/
+       /*url(/fonts/BKoodakBoldBold.ttf) format('truetype');*/
 }
