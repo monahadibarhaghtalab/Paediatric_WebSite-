@@ -11,6 +11,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -22,11 +23,12 @@
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
     <link href="/style.css" rel="stylesheet">
+    <link href="/responsive-style.css" rel="stylesheet">
 
     <link href='/font.css' rel='stylesheet' type='text/css'>
 
 
-    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#sign-up").click(function(){
@@ -63,23 +65,34 @@
 </head>
 
 
-<body class="body-style home-body">
+<body class="body-style home-body" dir="rtl">
 
 <!--header-->
-
 <div class="navbar navbar-fixed-top header-style">
     <div class="container-fluid">
-        <button type="button" class="btn btn-navbar collapse-navbar" data-toggle="collapse" data-target="#myNavbar">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="first-img-box">
+                    <img src="/content/img/shafi.png">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-xs-12"></div>
+        <button type="button" class="btn btn-navbar collapse-navbar mobile-menu-button" data-toggle="collapse" data-target="#myNavbar ">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+            </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 
-        <a class="brand brand-navbar fa-font-set" href="/"><img class="profile-header-img img-circle" src="/content/img/profile.jpg" />
-            دکتر نظام هادی برحق طلب</a>
-        <img class=" img-responsive " src="/content/img/shafi.png" width="50px" height="50px"  style="margin-right: 600px" >
-        <img class="logo-header img-responsive  img-circle" src="/content/img/logo.jpg" width="120px" height="120px"  style="margin-top: -30px;">
-        <div class="nav-collapse collapse" id="myNavbar" style="display:block;">
+            <img class="logo-header img-responsive  img-circle top-logo" src="/content/img/logo.jpg">
+        </div>
+            <div class="col-lg-6 col-md-6">
+
+
+        <div class="nav-collapse collapse main-menu" id="myNavbar">
             <ul class="nav">
                 <!-- <li class="header-menu fa-font-set"><a href="#">نوبت دهی</a></li> -->
                 <li class="header-menu fa-font-set"><a href="/">خانه</a></li>
@@ -89,8 +102,13 @@
                 <li class="header-menu fa-font-set"><a href="/contact_us">تماس با ما</a></li>
             </ul>
         </div><!--/.nav-collapse -->
+            </div>
+            <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+                <a class="brand brand-navbar fa-font-set" href="/"><img class="profile-header-img img-circle" src="/content/img/profile.jpg" />
+                    دکتر نظام هادی برحق طلب</a>
+            </div>
 
-
+    </div>
     </div>
 </div>
 
@@ -107,25 +125,29 @@
 
 <div class="footer-container">
     <!--footer-->
+    <div class="container-fluid">
     <div class="row footer">
-        <a href="https://www.instagram.com/dr.barhaghtalab">
-        <img class="logo-header img-responsive " src="/content/img/insta.png" width="50px" height="50px" style="margin-left: 150px; margin-top: 55px;" >
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <a  class="insta-logo-container" href="https://www.instagram.com/dr.barhaghtalab">
+        <img class="logo-header img-responsive insta-logo" src="/content/img/insta.png" >
         </a>
-        <div class="row" style="z-index:100;">
-            <div class="profile-header-container">
-                <div class="col-xs-8 col-rtl">
-<div style="width:100%;
-    text-align: center;">
+            </div>
 
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-rtl">
+            <button type="submit"  class="red-btn fa-font-set" data-toggle="modal" data-target="#login">ورود</button>
+        </div>
 
-
-                    <div class="fa-font-set footer-detail" style="display: inline-block; margin-left: -150px; margin-right: -50px">آدرس: ایران - شیراز - خیابان نادر -چهارراه گمرک - ساختمان نادر - واحد ۳۰۳ <br> شماره تماس:۳۲۳۲۲۴۸۹-۰۷۱</div>
-                   <div class="col-xs-3 col-rtl" style="display: inline-block;"><button type="submit"  class="red-btn fa-font-set" data-toggle="modal" data-target="#login">ورود</button></div>
-</div>
+                <div class=" col-lg-8 col-md-8 col-sm-12 col-xs-12 col-rtl">
+                    <div class="fa-font-set footer-detail"><p>آدرس: ایران - شیراز - خیابان نادر -چهارراه گمرک - ساختمان نادر - واحد ۳۰۳ <br></br> شماره تماس:۳۲۳۲۲۴۸۹-۰۷۱</p></div></br></br>
                 </div>
 
-            </div>
-        </div>
+
+                </div>
+
+
+
+    </div>
+    </div>
     </div>
 
 

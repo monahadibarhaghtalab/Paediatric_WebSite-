@@ -1,0 +1,100 @@
+@media (max-width : 380px) {
+
+}
+
+@media (max-width : 480px) and (orientation : landscape){
+}
+
+
+@media (max-width : 1366px) and (orientation : landscape){
+
+}
+@media (max-width : 480px) {
+
+
+
+}
+@media (min-width : 481px) and (max-width: 767px) {
+
+
+}
+@media screen and (max-device-width: 767px) and (orientation : landscape){
+
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+
+
+@media (max-width: 768px){
+
+
+
+}
+
+@media (max-width: 800px) {
+    .mobile-menu-button{
+        float: right; !important;
+    }
+
+    .top-logo{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float:none;
+    }
+
+}
+
+@media (min-width : 768px) and (max-width: 991px) {
+
+}
+
+
+@media (min-width : 768px) and (max-width: 1280px) {
+    .navbar .brand{
+        font-size: 15px;
+    }
+
+}
+@media (max-width: 1280px){
+
+}
+
+
+
+
+@media (max-width: 991px) {
+
+}
+
+
+@media (min-width : 992px) and (max-width: 1199px) {
+
+
+
+
+}
+
+
+@media (max-width : 1200px) {
+
+
+}
+
+
+@media (min-width : 1200px) {
+
+
+}
+
+
+
+@media (min-width: 1281px) and (max-width: 1440px){
+
+}
+

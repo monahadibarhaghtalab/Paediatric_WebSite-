@@ -40,6 +40,15 @@
     color: white!important;
 }
 
+.navbar .brand{
+    margin-right: 3% !important;
+    padding: 0 !important;
+}
+
+
+.navbar .nav{
+    margin-bottom: 5px;
+}
 .collapse-navbar {
     margin-left: 20px !important;
 }
@@ -58,6 +67,10 @@
 .nav, .main {
     background-color: #f6f6f6;
     text-align: center;
+}
+
+.main-menu{
+    display: block;
 }
 
 .bg-image {
@@ -286,6 +299,11 @@ body,
     float: left;
 }
 
+.insta-logo{
+    width: 50px;
+    height:50px;
+}
+
 .profile-header-container{
     margin: 0 auto;
     /*  text-align: center;*/
@@ -304,7 +322,17 @@ body,
     float: left;
     position: relative;
     margin-left: 3%;
-    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.logo-header.img-responsive.img-circle{
+    border:4px solid #cf2229;
+}
+
+.first-img-box{
+    text-align: center;
 }
 
 .profile-header {
@@ -326,15 +354,6 @@ body,
     border-radius: 27px;
 }
 
-.footer-detail {
-    direction: rtl;
-    padding-top: 70px;
-    padding-right: 80px;
-    color: white;
-    font-size: 16px;
-    position: absolute;
-    /*right: 36%;*/
-}
 
 .red-btn {
     background-color: #cf2229 !important;
@@ -463,4 +482,58 @@ body,
 
 ::-webkit-scrollbar-thumb:hover {
     background: #cf2229;  
+}
+
+
+/* nika css*/
+
+.insta-logo-container{
+    text-align: center;
+    line-height: 200px;
+    display: block;
+}
+
+
+.insta-logo-container .logo-header.logo-header.insta-logo{
+    width: 70px;
+    height: 70px;
+    display: block;
+    float: none;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.footer-detail {
+    direction: rtl;
+    color: white;
+    font-size: 16px;
+    margin-top: 85px;
+    text-align: center;
+}
+
+.red-btn {
+    margin-top: 85px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    left:35%;
+}
+
+.navbar .btn-navbar{
+    float: right !important;
+    margin-right: 50px;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+
+    top:30%;
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    right:35%;
 }
