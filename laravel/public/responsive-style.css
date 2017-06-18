@@ -1,5 +1,7 @@
 @media (max-width : 380px) {
 
+
+
 }
 
 @media (max-width : 480px) and (orientation : landscape){
@@ -48,6 +50,47 @@
         float:none;
     }
 
+    .bg-image.intro{
+        margin-top: 200px !important;
+    }
+
+    .links-container span{
+         font-size:4.3vw;
+    }
+
+    .links-container li{
+        margin-bottom: 10px;
+    }
+
+    .footer-detail{
+        margin-top: 40px;
+    }
+
+    .red-btn{
+        margin-top: 40px;
+    }
+
+    .footer-detail p{
+        margin-left: 10px;
+    }
+
+    .insta-logo-container .logo-header.logo-header.insta-logo{
+        margin-top: 40px;
+    }
+
+    .links-container.around-shadow{
+        padding-top: 30px;
+    }
+
+    .modal.fade.in{
+        width: 100% !important;
+    }
+
+    .modal-dialog{
+        width: 85% !important;
+
+    }
+
 }
 
 @media (min-width : 768px) and (max-width: 991px) {
@@ -62,6 +105,8 @@
 
 }
 @media (max-width: 1280px){
+
+
 
 }
 
@@ -96,5 +141,16 @@
 
 @media (min-width: 1281px) and (max-width: 1440px){
 
+}
+
+@media (min-width:767px) and (max-width: 1366px){
+    .row.contact-row{
+        min-height: 685px;
+
+    }
+
+    #googleMap{
+        height:500px !important;
+    }
 }
 

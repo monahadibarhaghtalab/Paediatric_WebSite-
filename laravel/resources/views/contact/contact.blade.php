@@ -4,20 +4,20 @@
     <div class="container" >
 
         <div class="row" style="height:170px;"></div>
-        <div class="row">
-        <div class="col-xs-6 col-rtl">
+        <div class="row contact-row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-rtl">
             <div class="links-container around-shadow fa-font-set" >
-            <h5  >آدرس: ایران - شیراز - خیابان نادر -چهارراه گمرک - ساختمان نادر - واحد ۳۰۳
+            <h5  >زمان مراجعه :
                 </h5>
             <h5>
-                <br> شماره تماس:۳۲۳۲۲۴۸۹-۰۷۱</h5>
+                <br> شنبه تا چهارشنبه صبح و عصر و پنجشنبه صبح</h5>
                 </div>
 
         </div>
 
 
-        <div class="col-xs-6 col-rtl"  >
-            <div class="links-container around-shadow "id="googleMap" style="width:70%; height: 300px; "></div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-rtl"  >
+            <div class="links-container around-shadow "id="googleMap" style="width:100%; height: 300px; "></div>
             </div>
 
         </div>

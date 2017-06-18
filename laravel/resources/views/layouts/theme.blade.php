@@ -65,7 +65,7 @@
 </head>
 
 
-<body class="body-style home-body" dir="rtl">
+<body class="body-style home-body" dir="rtl" style="height: auto;">
 
 <!--header-->
 <div class="navbar navbar-fixed-top header-style">
@@ -158,13 +158,8 @@
 
 
 <!-- log in & sign up-->
-<div class="modal fade" tabindex="-1" id="login" role="dialog" style="
-
-    position: absolute;
-
-    margin-right: 400px;
-    padding: 20px;
-}">
+<div class="modal-parent">
+<div class="modal fade" tabindex="-1" id="login" role="dialog">
     <div class="modal-dialog" role="document">
 
         <!-- login content-->
@@ -231,6 +226,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 </div>

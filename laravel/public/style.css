@@ -74,7 +74,7 @@
 }
 
 .bg-image {
-    margin-top: 120px !important;
+    margin-top: 120px;
     padding-top: -1px;
 }
 
@@ -248,7 +248,7 @@ body,
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
-    height: 100%;
+    height: auto;
 }
 
 .gallery-img {
@@ -381,7 +381,7 @@ body,
 
 .question-container-answer {
     position: absolute;
-    top: 800px;/*shoule change*/
+    /*top: 800px;!*shoule change*!*/
     right: 26%;
     width: 100%;
 }
@@ -536,4 +536,55 @@ body,
 
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
     right:35%;
+}
+
+
+.links-container span{
+    font-size:1.3vw;
+}
+
+.contact-row{
+
+}
+
+
+.modal-dialog{
+    position: absolute !important;
+    width:500px !important;
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0 !important;
+}
+
+.modal{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding:20px;
+    margin-right: 0!important;
+    margin-left: 0 !important;
+    width:auto !important;
+}
+
+.modal.in .modal-dialog {
+    transform: translate(-50%, -50%) !important;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(-50%, -50%) !important;
+}
+
+.modal.fade.in{
+    top:50%;
+}
+
+.repeat-content{
+    background-image: url("content/img/question_bg-repeat1.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
 }

@@ -15,9 +15,10 @@ class GalleryController extends Controller
 
     public function all(){
 
-    	$allImage = Image::all();
-    	return view("gallery.all")->with("images", $allImage);
-    }
+    $allImage = Image::all();
+    return view("gallery.all")->with("images", $allImage);
+}
+
 
 
     public function getAll(){

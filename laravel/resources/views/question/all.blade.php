@@ -6,9 +6,9 @@
 
 
 <div class="container">
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="bg-image" style="overflow-y:hidden;overflow-x: hidden;">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="bg-image" style="position: scroll">
                 <img class="img-responsive" src="content/img/question_bg.jpg" >
                 <div class="question-container fa-font-set" >
                     <div >
@@ -34,9 +34,9 @@
                 </div>
                 </div>
                 @foreach($answeredQs as $question)
-                    <img class="img-responsive" src="content/img/question_bg-repeat.jpg" >
+                    <div class="repeat-content">
                 <div class="question-container-answer fa-font-set" >
-                    <div >
+                    <div>
 
                             <p class="qa-caption-style"> سوال:</p>
                             <p class="qa-description-style">{{$question->text}}</p>
@@ -45,6 +45,7 @@
 
 
                     </div>
+                </div>
                 </div>
 
                 @endforeach
