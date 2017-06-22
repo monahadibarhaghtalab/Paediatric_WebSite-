@@ -581,10 +581,45 @@ body,
     top:50%;
 }
 
+
+
+
 .repeat-content{
     background-image: url("content/img/question_bg-repeat1.jpg");
     background-repeat: repeat;
     background-position: center;
     background-size: cover;
     height: 150px;
+}
+
+.gallery-col{
+    margin-top: 50px;
+}
+
+.img.col-rtl img {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.edu-container{
+    padding: 20px;
+    margin-right: 85px;
+}
+
+.parent-article{
+    margin-top: 200px;
+}
+
+center .img-thumbnail.img-rounded{
+    height: 250px;
+}
+
+
+[dir='rtl'] .slick-prev {
+
+    top: 96px !important;
+}
+
+[dir='rtl'] .slick-next {
+    top: 96px !important;
 }

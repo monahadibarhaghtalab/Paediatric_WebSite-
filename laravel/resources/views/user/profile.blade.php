@@ -566,15 +566,15 @@
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-2"></div>
+
 
                                             </div>
                                             <!-----all image in gallery------>
-                                            <div class="col-xs-2"></div>
-                                            <div class="col-xs-8">
+
+                                            
                                                 <div class="row">
                                                     @foreach ($images as $image)
-                                                    <div class="col-xs-4">
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                         <a href={{"/admin/removeImage/".$image->image_id }}>
                                                             <div class="thumbnail pic-container around-shadow">
                                                                 <div class="row">
@@ -592,7 +592,7 @@
 
 
                                                 </div>
-                                            </div>
+
                                             <div class="col-xs-2"></div>
 
                                         </div>

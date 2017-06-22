@@ -23,18 +23,21 @@
                 {{--text-align: center;--}}
             {{--}--}}
         {{--</style>--}}
-        <div class="container" >
+        <div class="container-fluid" >
 
             <div class="row" style="height:170px;"></div>
+            </div>
+        <div class="container-fluid">
+
                 <?php $flag = 0; ?>
         @foreach($images as $image)
             @if($flag%3 == 0)
                 <?php
-                    echo "<div class='row '>"
+                    echo "<div class='row'>"
                 ?>
              @endif
 
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gallery-col">
     <div class="img col-rtl">
         <a target="_blank" href="#">
             <img src={{$image->image_gallery_addr}} alt="Fjords" >
@@ -51,6 +54,12 @@
 
                         <?php $flag = $flag + 1; ?>
 @endforeach
+        @if($flag%3 != 2)
+            <?php
+            echo "</div >"
+            ?>
+        @endif
+
     </div>
 
 @endsection

@@ -91,8 +91,6 @@
     <!---insta -->
 
 
-    <div class="col-lg-12">
-    <div class="page-header">
     <!--    <h1>Display Instagram Feed On Website - LEVEL 1 - Live Demo</h1> -->
     <?php
     // use this instagram access token generator http://instagram.pixelunion.net/
@@ -109,8 +107,6 @@
     $obj = json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
 
     ?>
-    </div>
-    </div>
 
 
 
@@ -120,7 +116,7 @@
             <!-- Instagram feed will be here -->
 
 
-    <div class="row" style="height: 200px; margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto; ">
+    <div class="row instagram-row" style="height: 200px; margin-top: 70px; margin-bottom: 70px; max-width: 1000px; margin-left: auto; margin-right: auto; ">
         <div class="responsive" data-slick='{"slidesToScroll": 1}'>
 <?php
             foreach ($obj['data'] as $post) {
